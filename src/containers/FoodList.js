@@ -3,10 +3,17 @@ import { connect } from "react-redux";
 
 class FoodList extends Component {
   renderFood(food) {
+    console.log(food);
     return (
       <div>
-        <h2>{food.title}</h2>
-        <h3>{food.id}</h3>
+        {food.map(function(recipe) {
+          return (
+            <ul key={recipe.id}>
+              {recipe.title}
+              <img src={recipe.image} alt="" />
+            </ul>
+          );
+        })}
       </div>
     );
   }
