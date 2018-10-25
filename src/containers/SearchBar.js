@@ -25,6 +25,7 @@ class SearchBar extends Component {
     event.preventDefault();
 
     this.props.fetchFood(this.state.term);
+
     // We set state to an empty string to clear the term when the search bar re-renders
     this.setState({ term: "" });
   }

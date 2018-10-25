@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { fetchInfo } from "../actions";
 
 class FoodList extends Component {
+  //******************************************* Update code below for fetchRecipe
+
+  //should possibly use an onClick event with a rendered button that takes the food.id and
+  // dispatches an action with the recipe.id
   renderFood(food) {
     console.log(food);
     return (
@@ -9,8 +14,9 @@ class FoodList extends Component {
         {food.map(function(recipe) {
           return (
             <ul key={recipe.id}>
-              {recipe.title}
+              {recipe.title} <br />
               <img src={recipe.image} alt="" />
+              {this.props.fetchInfo(recipe.id)}
             </ul>
           );
         })}
@@ -27,11 +33,14 @@ class FoodList extends Component {
   }
 }
 
-function mapStateToProps({ food }) {
-  return { food };
+function mapStateToProps({ food, info }) {
+  return {
+    food,
+    info
+  };
 }
 
 export default connect(
   mapStateToProps,
-  null
+  { fetchInfo }
 )(FoodList);
