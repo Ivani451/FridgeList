@@ -10,7 +10,9 @@ class App extends Component {
         <header>
           <SearchBar />
         </header>
-        <FoodList />
+        <main>
+          <FoodList />
+        </main>
       </div>
     );
   }
