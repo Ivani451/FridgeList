@@ -1,11 +1,16 @@
-.recipeComp {
-  border-style: solid;
-  border-radius: 25px;
-  padding: 1em 3em 1em 1em;
-  margin: 2em 5em 2em 5em;
-  font-family: Courier, Verdana;
+.food-container {
+  display: flex;
+  flex-wrap: wrap;
 
-  img {
-    margin: 1em 0 0 0;
+  .recipeComp {
+    font-family: Georgia;
+    font-size: 60%;
+    padding: 1em;
+    margin: 1em;
+    text-align: center;
+
+    img {
+      border-radius: 8px;
+    }
   }
 }
