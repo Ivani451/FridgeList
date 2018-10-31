@@ -7,9 +7,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <header>
-          <SearchBar />
+        <header id="main-header">
+          <h1>ReciFridge</h1>
         </header>
+        <SearchBar />
         <main>
           <FoodList />
         </main>

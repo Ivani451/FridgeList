@@ -1,5 +1,3 @@
-/*
-
 import { FETCH_INFO } from "../actions/types";
 
 export default function(state = [], action) {
@@ -11,4 +9,3 @@ export default function(state = [], action) {
       return state;
   }
 }
-*/

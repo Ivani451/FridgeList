@@ -1,16 +1,40 @@
+#main-header {
+  text-align: center;
+  color: white;
+  background: #65e59c;
+  padding: 2em;
+  font-family: Verdana, sans-serif;
+}
+
 .food-container {
   display: flex;
   flex-wrap: wrap;
+  text-align: center;
 
-  .recipeComp {
+  .indiv-recipe {
+    height: 250px;
+    width: 250px;
     font-family: Georgia;
-    font-size: 60%;
-    padding: 1em;
+    font-size: 40%;
     margin: 1em;
-    text-align: center;
 
-    img {
-      border-radius: 8px;
-    }
+    background-repeat: no-repeat;
+  }
+
+  #recipe-title {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 2%;
+  }
+}
+
+form {
+  padding: 5px;
+  margin: 2em;
+  text-align: center;
+  border: none;
+
+  input {
+    width: 30%;
   }
 }
