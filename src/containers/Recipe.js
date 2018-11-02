@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import { fetchInfo } from "../actions";
 
 // Here we take in the passed in props from the FoodList component and render
@@ -9,7 +9,7 @@ class Recipe extends Component {
   renderFood(food) {
     return (
       <div className="food-container">
-        {food.map(function(recipe) {
+        {food.map(recipe => {
           console.log(recipe.id);
           return (
             <div
