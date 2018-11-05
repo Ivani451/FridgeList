@@ -5,6 +5,7 @@ import { fetchInfo } from "../actions";
 
 // Here we take in the passed in props from the FoodList component and render
 // the dishes for the inputted ingredients
+
 class Recipe extends Component {
   renderFood(food) {
     return (
@@ -30,7 +31,7 @@ class Recipe extends Component {
   render() {
     return (
       <div>
-        <h1>{this.props.foods.map(this.renderFood)}</h1>
+        <h1>{this.props.foods.map(this.renderFood, this)}</h1>
       </div>
     );
   }
