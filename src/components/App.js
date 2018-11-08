@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import SearchBar from "../containers/SearchBar";
-import FoodList from "../containers/FoodList";
+import Home from "./Home";
 import "../App.scss";
 
 class App extends Component {
@@ -10,10 +9,7 @@ class App extends Component {
         <header id="main-header">
           <h1>ReciFridge</h1>
         </header>
-        <SearchBar />
-        <main>
-          <FoodList />
-        </main>
+        <Home />
       </div>
     );
   }

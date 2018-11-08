@@ -28,6 +28,8 @@ class Recipe extends Component {
     );
   }
 
+  // 'this' is added as a second argument to map to bind it with the fetchInfo action creator
+  // used in the function call
   render() {
     return (
       <div>
