@@ -26,7 +26,6 @@ export const fetchFood = (...food) => async dispatch => {
 export const fetchInfo = foodId => async dispatch => {
   // The call to our Food API is set up and triggered
 
-  console.log(foodId);
   const config = {
     headers: {
       "X-Mashape-Key": "uyQXZtNhmjmshd8C2cUfXQnqoYuRp1b2kgKjsnK6k86LQg22rs",
