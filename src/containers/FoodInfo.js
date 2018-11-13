@@ -1,13 +1,27 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-export default class FoodInfo extends Component {
+class FoodInfo extends Component {
+  renderInfo(food) {
+    return <div>{food}</div>;
+  }
+
   render() {
-    console.log("this works!");
     return (
       <div>
-        <h1>Cool!</h1>
+        <h1>{this.props.info.map(this.renderInfo, this)}</h1>
       </div>
     );
   }
 }
+
+function mapStateToProps({ info }) {
+  return {
+    info
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  null
+)(FoodInfo);
