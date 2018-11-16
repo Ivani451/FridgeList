@@ -41,4 +41,8 @@ form {
 .food-info {
   border: 1px solid black;
   font-size: 30%;
+
+  .food-title {
+    text-decoration: underline;
+  }
 }

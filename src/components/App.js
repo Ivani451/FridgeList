@@ -17,7 +17,6 @@ class App extends Component {
             </li>
           </ul>
           <hr />
-
           <Route exact strict path="/" component={Home} />
         </div>
       </Router>

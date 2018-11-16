@@ -5,11 +5,17 @@ class FoodInfo extends Component {
   renderInfo(food) {
     return (
       <div className="food-info">
-        <h4>{food.title}</h4>
+        <h4 className="food-title">{food.title}</h4>
         <p>Prep time: {food.preparationMinutes} minutes</p>
         <p>Servings: {food.servings}</p>
         <p>Instructions: {food.instructions}</p>
-        <p>By {food.creditsText}</p>
+        <p>
+          By <a href={food.sourceUrl}>{food.creditsText}</a>{" "}
+        </p>
+        Ingredients:
+        {food.extendedIngredients.map(item => {
+          return <p>{item.name}</p>;
+        })}
       </div>
     );
   }
