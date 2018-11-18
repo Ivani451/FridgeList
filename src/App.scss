@@ -2,7 +2,7 @@
   text-align: center;
   color: white;
   background: #65e59c;
-  padding: 2em;
+  padding: 2em 2em 0 0;
   font-family: Verdana, sans-serif;
 }
 
@@ -44,5 +44,14 @@ form {
 
   .food-title {
     text-decoration: underline;
+  }
+}
+
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  li {
+    display: inline;
+    margin: 0 1em 0 0;
   }
 }
