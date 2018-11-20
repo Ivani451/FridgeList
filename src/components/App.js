@@ -15,14 +15,19 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <div>
+          <div className="container">
             <header id="main-header">
               <h1>ReciFridge</h1>
               <Header />
             </header>
 
             <Route exact strict path="/" component={withRouter(Home)} />
-            <Route exact strict path="/cool" component={withRouter(FoodInfo)} />
+            <Route
+              exact
+              strict
+              path="/recipe"
+              component={withRouter(FoodInfo)}
+            />
           </div>
         </Switch>
       </Router>

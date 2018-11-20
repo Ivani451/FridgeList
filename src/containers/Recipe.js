@@ -15,8 +15,9 @@ class Recipe extends Component {
           return (
             <div>
               {" "}
-              <Link to="/cool">
+              <Link to="/recipe">
                 <div
+                  key={recipe.id}
                   className="indiv-recipe"
                   style={{
                     backgroundImage: "url(" + recipe.image + ")"

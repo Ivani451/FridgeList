@@ -1,8 +1,12 @@
+body {
+  background-color: #dee2e8;
+}
+
 #main-header {
   text-align: center;
   color: white;
   background: #65e59c;
-  padding: 2em 2em 0 0;
+  padding: 2em 0 0 0;
   font-family: Verdana, sans-serif;
 }
 
@@ -41,17 +45,29 @@ form {
 .food-info {
   border: 1px solid black;
   font-size: 30%;
+  background-color: white;
 
   .food-title {
+    text-align: center;
     text-decoration: underline;
+    font-size: 200%;
   }
 }
 
 .top-nav {
   display: flex;
   flex-direction: row;
+  background-color: #3cc97b;
+  text-decoration: none;
+
   li {
     display: inline;
     margin: 0 1em 0 0;
+    padding: 1em;
+    color: white;
+    :link {
+      text-decoration: none;
+      border: 3px;
+    }
   }
 }
