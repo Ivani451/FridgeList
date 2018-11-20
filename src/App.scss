@@ -44,13 +44,20 @@ form {
 
 .food-info {
   border: 1px solid black;
-  font-size: 30%;
+  font-size: 40%;
   background-color: white;
+  margin: 7%;
+  padding: 2em;
 
   .food-title {
     text-align: center;
     text-decoration: underline;
     font-size: 200%;
+  }
+
+  .recipe-main {
+    text-decoration: underline;
+    margin: 0 1em 0 0;
   }
 }
 
@@ -61,13 +68,13 @@ form {
   text-decoration: none;
 
   li {
-    display: inline;
+    display: block;
     margin: 0 1em 0 0;
     padding: 1em;
     color: white;
+
     :link {
       text-decoration: none;
-      border: 3px;
     }
   }
 }
