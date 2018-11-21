@@ -6,27 +6,33 @@ class FoodInfo extends Component {
     return (
       <div className="food-info">
         <h4 className="food-title">{food.title}</h4>
+
         <p>
           <span className="recipe-main">Prep time:</span>
           {food.preparationMinutes} minutes
         </p>
+
         <p>
           <span className="recipe-main">Servings:</span>
           {food.servings}
         </p>
+
+        <div>
+          <span className="recipe-main">Ingredients:</span>
+          {food.extendedIngredients.map(item => {
+            return <li>{item.name}</li>;
+          })}
+        </div>
+
         <p>
           <span className="recipe-main">Instructions:</span>
           {food.instructions}
         </p>
+
         <p>
           By <a href={food.sourceUrl}>{food.creditsText}</a>
         </p>
-        <span className="recipe-main">Ingredients:</span>
-        {food.extendedIngredients.map(item => {
-          return <li>{item.name}</li>;
-        })}
       </div>
-      // The above code formats the list of ingredients to be comma-separated
     );
   }
 
