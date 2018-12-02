@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Home from "./Home";
-import FoodInfo from "../containers/FoodInfo";
+import FoodInfo from "containers/FoodInfo";
 import Header from "./Header";
 import "../App.scss";
 import {
