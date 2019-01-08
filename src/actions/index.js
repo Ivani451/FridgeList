@@ -10,10 +10,9 @@ export const fetchFood = (...food) => async dispatch => {
     }
   };
 
-  // Here we take the users inputs(ingredients) and transform them to a usable string for our URL.
-  let joined = food.join(",");
-  let ingredients = joined.replace(/,\s*/g, "%2C");
+  // Here we take the users inputs(ingredients) and encode them into a usable string for the URL
 
+  let ingredients = encodeURIComponent(food);
   let URL = `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?ingredients=${ingredients}&number=10&ranking=1`;
 
   const res = await axios.get(URL, config);
