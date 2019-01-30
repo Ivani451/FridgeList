@@ -38,7 +38,3 @@ export const fetchInfo = foodId => async dispatch => {
   dispatch({ type: FETCH_INFO, payload: res });
 };
 
-// Here we take the users inputs(ingredients) and transform them to a usable string for our URL.
-
-// let joined = food.join(",");
-// let ingredients = joined.replace(/,\s*/g, "%2C");
