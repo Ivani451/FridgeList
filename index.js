@@ -3,14 +3,12 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const pg = require("pg");
 
-const PORT = 3000;
-
 // database configuration
 let pool = new pg.Pool({
-  user: "postgres",
-  database: "recipes",
+  user: "aws_postgres",
+  database: "aws_postgres",
   password: "haze2tha451",
-  host: "localhost",
+  host: "mydbinstance.cwjnu9ovvpww.us-east-2.rds.amazonaws.com",
   port: 5432,
   max: 10
 });
@@ -47,6 +45,8 @@ app.use(function(req, res, next) {
   );
   next();
 });
+
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
