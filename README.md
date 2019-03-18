@@ -1,5 +1,12 @@
 # foodApp
-Food web app that is used to retrieve a list of recipes consisting of the user's inputted ingredients.
+Web app that is used to retrieve a list of recipes consisting of the user's inputted ingredients.
+
+Tech Stack: 
+- JS (React/ES5/ES6)
+- Redux
+- PostgreSQL
+- Node/Express
+- SASS
 
 
 
