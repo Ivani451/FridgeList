@@ -35,7 +35,7 @@ module.exports = app => {
     });
   });
 
-  // conneting to and making a POST request to our postgres database
+  // connecting to and making a POST request to our postgres database
   app.post("/recipe", (req, res) => {
     const data = {
       title: req.body.title,
@@ -62,13 +62,33 @@ module.exports = app => {
       client.query(query, values, (error, result) => {
         done();
         if (error) {
-          res.status(400).json({ error });
+          return res.status(400).json({ error });
         }
         res.status(202).send({
-          status: "Successful",
+          status: "Success",
           result: result.rows[0]
         });
       });
+    });
+  });
+
+  app.get("/recipe/:id", (req, res) => {
+    pool.connect((err, client, done) => {
+      client.query(
+        "SELECT * FROM recipe WHERE id = $1",
+        [req.params.id],
+        (error, result) => {
+          done();
+          if (error) {
+            console.log(req.params.id);
+            return res.status(400).json({ error });
+          }
+          res.status(202).json({
+            status: "Success",
+            result: result.rows[0]
+          });
+        }
+      );
     });
   });
 };

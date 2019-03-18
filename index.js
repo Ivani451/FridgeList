@@ -19,15 +19,16 @@ app.use(function(req, res, next) {
   next();
 });
 
+// importing and using the routes with express
 require("./routes")(app);
-
-const PORT = process.env.PORT || 3000;
 
 app.get("*", (req, res) =>
   res.status(200).send({
     message: "Welcome to the default API route"
   })
 );
+
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
