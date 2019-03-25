@@ -72,6 +72,7 @@ module.exports = app => {
     });
   });
 
+  // connecting to and making a GET request to our postgres database by ID
   app.get("/recipe/:id", (req, res) => {
     pool.connect((err, client, done) => {
       client.query(
@@ -86,6 +87,26 @@ module.exports = app => {
           res.status(202).json({
             status: "Success",
             result: result.rows[0]
+          });
+        }
+      );
+    });
+  });
+
+  app.delete("/recipe/:id", (req, res) => {
+    pool.connect((err, client, done) => {
+      client.query(
+        "DELETE FROM recipe WHERE id = $1",
+        [req.params.id],
+        (error, result) => {
+          done();
+          if (error) {
+            console.log(req.params.id);
+            return res.status(400).json({ error });
+          }
+          res.status(202).json({
+            status: "Success",
+            message: `Recipe ${req.params.id} deleted`
           });
         }
       );
