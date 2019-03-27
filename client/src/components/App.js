@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Home from "./Home";
 import FoodInfo from "containers/FoodInfo";
-import RecipeNew from "containers/RecipeNew";
+import RecipeForm from "containers/RecipeForm";
 import Header from "./Header";
 import "../App.scss";
 import {
@@ -29,7 +29,11 @@ class App extends Component {
               path="/recipe"
               component={withRouter(FoodInfo)}
             />
-            <Route exact path="/recipe/new" component={withRouter(RecipeNew)} />
+            <Route
+              exact
+              path="/recipe/new"
+              component={withRouter(RecipeForm)}
+            />
           </div>
         </Switch>
       </Router>
