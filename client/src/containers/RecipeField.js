@@ -1,8 +1,10 @@
 import React from "react";
 
-export default ({ input }) => {
+// "input" is destructured from the props passed in by the redux-form "Field" component
+export default ({ input, label }) => {
   return (
     <div>
+      <label>{label}</label> <br />
       <input {...input} />
     </div>
   );
