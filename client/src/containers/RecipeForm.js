@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { reduxForm, Field } from "redux-form";
 import RecipeField from "./RecipeField";
+import InstructionsField from "./InstructionsField";
 
 // Setting up forms using redux-form
 class RecipeForm extends Component {
   renderFields() {
     return (
-      <div>
+      <div id="recipeForm">
         <Field
           label="Recipe Title"
           type="text"
@@ -35,7 +36,7 @@ class RecipeForm extends Component {
           label="Instructions"
           type="text"
           name="instructions"
-          component={RecipeField}
+          component={InstructionsField}
         />
         <Field
           label="Author"
@@ -52,7 +53,9 @@ class RecipeForm extends Component {
       <div>
         <form onSubmit={this.props.handleSubmit(values => console.log(values))}>
           {this.renderFields()}
-          <button type="submit">Submit</button>
+          <button type="submit" id="formSubmit">
+            Submit
+          </button>
         </form>
       </div>
     );

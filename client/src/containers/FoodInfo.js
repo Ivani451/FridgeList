@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 class FoodInfo extends Component {
-  renderInfo(food) {
+  renderInfo({ food }) {
     return (
       <div className="food-info">
         <h4 className="food-title">{food.title}</h4>
