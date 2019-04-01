@@ -3,49 +3,32 @@ import { reduxForm, Field } from "redux-form";
 import RecipeField from "./RecipeField";
 import InstructionsField from "./InstructionsField";
 
+const FIELDS = [
+  { label: "Author", name: "author", component: RecipeField },
+  { label: "Recipe Title", name: "title", component: RecipeField },
+  { label: "Prep Time", name: "prep", component: RecipeField },
+  { label: "Servings", name: "servings", component: RecipeField },
+  { label: "Ingredients", name: "ingredients", component: RecipeField },
+  {
+    label: "Instructions",
+    name: "instructions",
+    component: InstructionsField
+  }
+];
+
 // Setting up forms using redux-form
 class RecipeForm extends Component {
   renderFields() {
-    return (
-      <div id="recipeForm">
+    return FIELDS.map(field => {
+      return (
         <Field
-          label="Recipe Title"
           type="text"
-          name="title"
-          component={RecipeField}
+          label={field.label}
+          name={field.name}
+          component={field.component}
         />
-        <Field
-          label="Prep Time"
-          type="text"
-          name="prep"
-          component={RecipeField}
-        />
-        <Field
-          label="Servings"
-          type="text"
-          name="servings"
-          component={RecipeField}
-        />
-        <Field
-          label="Ingredients"
-          type="text"
-          name="ingredients"
-          component={RecipeField}
-        />
-        <Field
-          label="Instructions"
-          type="text"
-          name="instructions"
-          component={InstructionsField}
-        />
-        <Field
-          label="Author"
-          type="text"
-          name="author"
-          component={RecipeField}
-        />
-      </div>
-    );
+      );
+    });
   }
 
   render() {
