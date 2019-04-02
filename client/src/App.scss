@@ -8,6 +8,23 @@ body {
   background: #65e59c;
   padding: 2em 0 0 0;
   font-family: Verdana, sans-serif;
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      float: left;
+      display: block;
+      a {
+        display: block;
+        color: white;
+        text-align: center;
+        a:hover {
+          background: #111;
+        }
+      }
+    }
+  }
 }
 
 .food-container {
@@ -82,10 +99,27 @@ label {
   opacity: 0.5;
 }
 
-#recipeForm {
+form {
   text-align: left;
+  margin: 2em 0 2em 0;
+
+  #instructionsField {
+    min-height: 40%;
+    max-height: 100%;
+    margin: 1.5em 0 1em 0;
+  }
+
+  #recipeField {
+    min-height: 40%;
+    max-height: 100%;
+    margin: 0.5em 0 1em 0;
+  }
 }
 
 #formSubmit {
   float: left;
+}
+
+textarea {
+  width: 50%;
 }

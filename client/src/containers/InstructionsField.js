@@ -3,9 +3,9 @@ import React from "react";
 // "input" is destructured from the props passed in by the redux-form "Field" component
 export default ({ input, label }) => {
   return (
-    <div>
+    <div id="instructionsField">
       <label>{label}</label> <br />
-      <textarea {...input} />
+      <textarea {...input} rows="15" />
     </div>
   );
 };
