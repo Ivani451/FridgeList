@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FETCH_FOOD, FETCH_INFO } from "./types";
+import { FETCH_FOOD, FETCH_INFO, FETCH_RECIPES } from "./types";
 
 export const fetchFood = (...food) => async dispatch => {
   // The call to our Food API is set up and triggered
@@ -38,3 +38,15 @@ export const fetchInfo = foodId => async dispatch => {
   dispatch({ type: FETCH_INFO, payload: res });
 };
 
+// Fetch the user's personal recipes
+export const fetchMyRecipes = () => async dispatch => {
+  const res = await axios.get("/recipe");
+
+  dispatch({ type: FETCH_RECIPES, payload: res.data });
+};
+
+export const deleteRecipe = (id, history) => async dispatch => {
+  const res = await axios.delete(`/api/submissions/delete/${id}`, id);
+  history.push("/submissions");
+  dispatch({ type: DELETE_SUBMISSION, payload: res.data });
+};

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// Header/Navigation bar on top of web page
 export default function Header() {
   return (
     <ul className="top-nav">
