@@ -8,9 +8,13 @@ import InstructionsField from "./InstructionsField";
 const FIELDS = [
   { label: "Author", name: "author", component: RecipeField },
   { label: "Recipe Title", name: "title", component: RecipeField },
-  { label: "Prep Time", name: "prep", component: RecipeField },
+  { label: "Prep Time (minutes)", name: "prep", component: RecipeField },
   { label: "Servings", name: "servings", component: RecipeField },
-  { label: "Ingredients", name: "ingredients", component: RecipeField },
+  {
+    label: "Ingredients (seperate by commas)",
+    name: "ingredients",
+    component: RecipeField
+  },
   { label: "Instructions", name: "instructions", component: InstructionsField }
 ];
 

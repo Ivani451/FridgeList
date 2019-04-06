@@ -34,7 +34,7 @@ class SearchBar extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.onFormSubmit}>
+        <form onSubmit={this.onFormSubmit} id="searchBar">
           <input
             placeholder="search by ingredients"
             value={this.state.term}
