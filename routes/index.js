@@ -1,13 +1,14 @@
 const pg = require("pg");
+const config = require("../config/db");
 
 // database configuration
 let pool = new pg.Pool({
-  user: "aws_postgres",
-  database: "aws_postgres",
-  password: "haze2tha451",
-  host: "mydbinstance.cwjnu9ovvpww.us-east-2.rds.amazonaws.com",
-  port: 5432,
-  max: 10
+  user: config.user,
+  database: config.database,
+  password: config.password,
+  host: config.host,
+  port: config.port,
+  max: config.max
 });
 
 module.exports = app => {
