@@ -7,10 +7,29 @@ const morgan = require("morgan");
 
 let app = express();
 
+// passport setup using a Google strategy.
+// callbackURL is the URL that passport sends the user to after permission is granted to Google
 passport.use(
-  new GoogleStrategy({
-    clientID: keys.googleClientID,
-    clientSecret: keys.googleClientSecret
+  new GoogleStrategy(
+    {
+      clientID: keys.googleClientID,
+      clientSecret: keys.googleClientSecret,
+      callbackURL: "/auth/google/callback"
+    },
+    accessToken => {
+      console.log(accessToken);
+    }
+  )
+);
+
+/* 
+  When user goes to this route, passport begins the authentication process with the Google strategy.
+  The scope is the specific information that the application (ReciFridge) is allowed to receive from Google.
+*/
+app.get(
+  "/auth/google",
+  passport.authenticate("google", {
+    scope: ["profile", "email"]
   })
 );
 
