@@ -16,8 +16,10 @@ passport.use(
       clientSecret: keys.googleClientSecret,
       callbackURL: "/auth/google/callback"
     },
-    accessToken => {
-      console.log(accessToken);
+    (accessToken, refreshToken, profile, done) => {
+      console.log("accessToken: ", accessToken);
+      console.log("refreshToken: ", refreshToken);
+      console.log("profile: ", profile);
     }
   )
 );
@@ -51,11 +53,13 @@ app.use(function(req, res, next) {
 // importing and using the routes with express
 require("./routes")(app);
 
-app.get("*", (req, res) =>
+app.get("/", (req, res) =>
   res.status(200).send({
     message: "Welcome to the default API route"
   })
 );
+
+app.get("/auth/google/callback", passport.authenticate("google"));
 
 const PORT = process.env.PORT || 5000;
 
