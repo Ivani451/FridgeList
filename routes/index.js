@@ -1,14 +1,14 @@
 const pg = require("pg");
-const db = require("../config/db");
+require("dotenv").config();
 
 // database configuration
 let pool = new pg.Pool({
-  user: db.user,
-  database: db.database,
-  password: db.password,
-  host: db.host,
-  port: db.port,
-  max: db.max
+  user: process.env.DB_USER,
+  database: process.env.DB_DATABASE,
+  password: process.env.DB_PASSWORD,
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  max: process.env.DB_MAX
 });
 
 module.exports = app => {
