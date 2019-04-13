@@ -1,20 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 // Header/Navigation bar on top of web page
 export default function Header() {
   return (
     <ul className="top-nav">
-      <li>
-        <Link to="/" activeClassName="active">
-          Home
-        </Link>
-      </li>
-      <li>
-        <Link to="/recipe/new" activeClassName="active">
-          Add Recipe
-        </Link>
-      </li>
+      <span id="header-logo">
+        <h3>Fridge List</h3>
+      </span>
+
+      <NavLink to="/" activeClassName="active" className="header-button">
+        <p>Home</p>
+      </NavLink>
+
+      <NavLink
+        to="/recipe/new"
+        activeClassName="active"
+        className="header-button"
+      >
+        <p>Add Recipe</p>
+      </NavLink>
     </ul>
   );
 }

@@ -18,7 +18,6 @@ class App extends Component {
         <Switch>
           <div className="container">
             <header id="main-header">
-              <h1>ReciFridge</h1>
               <Header />
             </header>
 
