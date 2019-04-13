@@ -92,15 +92,19 @@ form {
     min-height: 40%;
     max-height: 100%;
     margin: 1.5em 0 1em 0;
+
+    textarea {
+      width: 50%;
+    }
   }
 
   #recipeField {
     min-height: 40%;
     max-height: 100%;
-    margin: 0.5em 0 1em 0;
+    margin: 0 0 1em 0;
   }
-}
 
-textarea {
-  width: 50%;
+  #upload-button {
+    margin: 0 0 1em 0;
+  }
 }

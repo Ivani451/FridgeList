@@ -30,6 +30,8 @@ app.get("/", (req, res) =>
   })
 );
 
+app.post("/upload", upload);
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
