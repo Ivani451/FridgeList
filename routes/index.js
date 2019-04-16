@@ -40,7 +40,7 @@ module.exports = app => {
   app.post("/recipe", (req, res) => {
     const data = {
       title: req.body.title,
-      prep_time: req.body.prep_time,
+      prep: req.body.prep,
       servings: req.body.servings,
       ingredients: req.body.ingredients,
       instructions: req.body.instructions,
@@ -50,7 +50,7 @@ module.exports = app => {
     pool.connect((err, client, done) => {
       const values = [
         data.title,
-        data.prep_time,
+        data.prep,
         data.servings,
         data.ingredients,
         data.instructions,
@@ -58,9 +58,10 @@ module.exports = app => {
       ];
 
       const query =
-        "INSERT INTO recipe(title, prep_time, servings, ingredients, instructions, author) VALUES($1, $2, $3, $4, $5, $6) RETURNING *";
+        "INSERT INTO recipe(title, prep, servings, ingredients, instructions, author) VALUES($1, $2, $3, $4, $5, $6) RETURNING *";
 
       client.query(query, values, (error, result) => {
+        console.log(req.body);
         done();
         if (error) {
           return res.status(400).json({ error });

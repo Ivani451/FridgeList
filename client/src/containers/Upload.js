@@ -1,17 +1,25 @@
-import React, { Component } from "react";
+// import React, { Component } from "react";
+// import axios from 'axios';
 
-class Upload extends Component {
-  fileSelectedHandler = event => {
-    console.log(event.target);
-  };
+// class Upload extends Component {
+//   handleFileSelect = event => {
+//     this.setState({
+//       selectedFile: event.target.files[0];
+//     })
+//   };
 
-  render() {
-    return (
-      <div id="upload-button">
-        <input type="file" onChange={this.fileSelectedHandler} />
-      </div>
-    );
-  }
-}
+//   handlFileUpload = () => {
+//     axios.post('')
+//   }
 
-export default Upload;
+//   render() {
+//     return (
+//       <div id="upload-button">
+//         <input type="file" onChange={this.handleFileSelect} />
+//         <button onClick={this.handlFileUpload}>Upload</button>
+//       </div>
+//     );
+//   }
+// }
+
+// export default Upload;

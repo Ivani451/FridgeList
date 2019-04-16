@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { reduxForm, Field } from "redux-form";
 import RecipeField from "./RecipeField";
 import InstructionsField from "./InstructionsField";
-import Upload from "./Upload";
+// import Upload from "./Upload";
 
 // Array of objects, each with properties corresponding to a specific
 // field. Just "DRY'ing" the code for less bloat.
@@ -35,7 +35,7 @@ class RecipeForm extends Component {
       <div>
         <form onSubmit={this.props.handleSubmit(values => console.log(values))}>
           {this.renderFields()}
-          <Upload />
+          {/* <Upload /> */}
           <button type="submit" id="formSubmit">
             Submit
           </button>

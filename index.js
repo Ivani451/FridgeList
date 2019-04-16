@@ -5,13 +5,13 @@ const morgan = require("morgan");
 
 let app = express();
 
-// importing and using the routes with express
-require("./routes")(app);
-require("./routes/authRoutes")(app);
-
 // middleware setup to body-parser, morgan, and CORS
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// importing and using the routes with express
+require("./routes")(app);
+require("./routes/authRoutes")(app);
 
 app.use(morgan("dev"));
 
@@ -29,8 +29,6 @@ app.get("/", (req, res) =>
     message: "Welcome to the default API route"
   })
 );
-
-app.post("/upload", upload);
 
 const PORT = process.env.PORT || 5000;
 
