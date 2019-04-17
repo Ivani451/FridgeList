@@ -50,3 +50,9 @@ export const deleteRecipe = (id, history) => async dispatch => {
   history.push("/submissions");
   dispatch({ type: DELETE_RECIPE, payload: res.data });
 };
+
+export const submitRecipe = values => async dispatch => {
+  const res = await axios.post("/recipe", values);
+
+  dispatch({ type: FETCH_RECIPES, payload: res.data });
+};

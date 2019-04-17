@@ -36,6 +36,7 @@ class RecipeForm extends Component {
         <form onSubmit={this.props.handleSubmit(values => console.log(values))}>
           {this.renderFields()}
           {/* <Upload /> */}
+
           <button type="submit" id="formSubmit">
             Submit
           </button>
