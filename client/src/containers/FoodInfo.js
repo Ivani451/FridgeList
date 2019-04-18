@@ -5,7 +5,7 @@ class FoodInfo extends Component {
   renderInfo(food) {
     return (
       <div className="food-info">
-        <h4 className="food-title">{food.title}</h4>
+        <h4>{food.title}</h4>
 
         <p>
           <span className="recipe-main">Prep time:</span>

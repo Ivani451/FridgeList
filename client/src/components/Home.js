@@ -5,7 +5,7 @@ import FoodList from "containers/FoodList";
 class Home extends Component {
   render() {
     return (
-      <div>
+      <div id="home">
         <SearchBar />
         <FoodList />
       </div>

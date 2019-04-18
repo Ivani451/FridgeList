@@ -1,5 +1,6 @@
 body {
   background-color: #dee2e8;
+  margin: 0;
 
   #main-header {
     .top-nav {
@@ -33,13 +34,14 @@ body {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
+    justify-content: center;
 
     .indiv-recipe {
       height: 250px;
       width: 250px;
+      margin: 1.5em;
       font-family: Georgia;
       font-size: 40%;
-      margin: 1em;
       background-repeat: no-repeat;
     }
 
@@ -69,7 +71,6 @@ body {
     padding: 2em;
 
     .food-title {
-      text-align: center;
       text-decoration: underline;
       font-size: 200%;
     }
