@@ -30,13 +30,13 @@ passport.use(
           return console.error("pool client fetch error", poolErr);
         }
         poolClient.query(
-          "SELECT id FROM users WHERE id=$1",
+          "INSERT INTO users(googleid) VALUES($1) RETURNING *",
           [profile.id],
           (error, result) => {
             if (error) {
-              return console.error("query error", error);
+              console.log(error);
             } else {
-              return console.log("success!");
+              console.log(result);
             }
           }
         );
