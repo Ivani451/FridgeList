@@ -14,6 +14,15 @@ let pool = new pg.Pool({
   max: process.env.DB_MAX
 });
 
+// passport serialize and deserialize
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(obj, done) {
+  done(null, obj);
+});
+
 // passport setup using a Google strategy.
 // callbackURL is the URL that passport sends the user to after permission is granted to Google
 passport.use(
@@ -29,14 +38,17 @@ passport.use(
         if (poolErr) {
           return console.error("pool client fetch error", poolErr);
         }
+
         poolClient.query(
-          "INSERT INTO users(googleid) VALUES($1) RETURNING *",
+          "SELECT * FROM users WHERE googleid = $1",
           [profile.id],
           (error, result) => {
             if (error) {
               console.log(error);
-            } else {
-              console.log(result);
+            } else if (null) {
+              console.log("null values");
+            } else if (profile.id == result.rows[0].googleid) {
+              return done(null, profile);
             }
           }
         );
@@ -48,3 +60,15 @@ passport.use(
     }
   )
 );
+
+// poolClient.query(
+//   "INSERT INTO users(googleid) VALUES($1) RETURNING *",
+//   [profile.id],
+//   (error, result) => {
+//     if (error) {
+//       console.log(error);
+//     } else {
+//       console.log(result);
+//     }
+//   }
+// );
