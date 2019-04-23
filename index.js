@@ -2,7 +2,7 @@ const express = require("express");
 require("./services/passport");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
-const passport = require("passport");
+// const passport = require("passport");
 
 let app = express();
 
@@ -10,8 +10,8 @@ let app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 // importing and using the routes with express
 require("./routes")(app);
