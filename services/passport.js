@@ -45,14 +45,16 @@ passport.use(
           (error, result) => {
             if (error) {
               console.log(error);
-            } else if (null) {
-              console.log("null values");
             } else if (result.rows[0] > "0") {
-              return console.log("We have a match!");
+              return console.log(
+                profile.id,
+                profile.name.givenName,
+                profile.photos[0].value
+              );
             } else {
               poolClient.query(
-                "INSERT INTO users(googleid) VALUES($1) RETURNING *",
-                [profile.id],
+                "INSERT INTO users(googleid, first_name, profile_picture) VALUES($1, $2, $3) RETURNING *",
+                [profile.id, profile.name.givenName, profile.photos[0].value],
                 (error, result) => {
                   if (error) {
                     console.log(error);
