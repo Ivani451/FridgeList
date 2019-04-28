@@ -15,13 +15,14 @@ let pool = new pg.Pool({
 });
 
 // passport serialize and deserialize
-// passport.serializeUser(function(user, done) {
-//   done(null, user);
-// });
+passport.serializeUser(function(user, done) {
+  console.log(user);
+  done(null, user);
+});
 
-// passport.deserializeUser(function(obj, done) {
-//   done(null, obj);
-// });
+passport.deserializeUser(function(obj, done) {
+  done(null, obj);
+});
 
 // passport setup using a Google strategy.
 // callbackURL is the URL that passport sends the user to after permission is granted to Google
@@ -59,7 +60,7 @@ passport.use(
                   if (error) {
                     console.log(error);
                   } else {
-                    console.log("added the mofo");
+                    console.log("added the user to the database");
                     console.log(result);
                   }
                 }
@@ -68,22 +69,6 @@ passport.use(
           }
         );
       });
-
-      console.log("accessToken: ", accessToken);
-      console.log("refreshToken: ", refreshToken);
-      console.log("googleID: ", profile.id);
     }
   )
 );
-
-// poolClient.query(
-//   "INSERT INTO users(googleid) VALUES($1) RETURNING *",
-//   [profile.id],
-//   (error, result) => {
-//     if (error) {
-//       console.log(error);
-//     } else {
-//       console.log(result);
-//     }
-//   }
-// );
