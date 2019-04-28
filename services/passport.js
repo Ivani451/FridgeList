@@ -16,11 +16,12 @@ let pool = new pg.Pool({
 
 // passport serialize and deserialize
 passport.serializeUser(function(user, done) {
-  console.log(user);
+  console.log("fasodfo" + user);
   done(null, user);
 });
 
 passport.deserializeUser(function(obj, done) {
+  console.log(obj);
   done(null, obj);
 });
 
@@ -47,6 +48,7 @@ passport.use(
             if (error) {
               console.log(error);
             } else if (result.rows[0]) {
+              done(null, result);
               return console.log(
                 profile.id,
                 profile.name.givenName,
