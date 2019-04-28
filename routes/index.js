@@ -13,7 +13,7 @@ let pool = new pg.Pool({
 
 module.exports = app => {
   // connecting to and making a GET request to our postgres database
-  app.get("/recipe", (req, res) => {
+  app.get("/recipes", (req, res) => {
     pool.connect((err, client, done) => {
       client.query("SELECT * FROM recipe", (error, result) => {
         done();

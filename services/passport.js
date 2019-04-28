@@ -45,7 +45,7 @@ passport.use(
           (error, result) => {
             if (error) {
               console.log(error);
-            } else if (result.rows[0] > "0") {
+            } else if (result.rows[0]) {
               return console.log(
                 profile.id,
                 profile.name.givenName,
