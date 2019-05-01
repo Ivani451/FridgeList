@@ -16,13 +16,11 @@ let pool = new pg.Pool({
 
 // passport serialize and deserialize
 passport.serializeUser(function(user, done) {
-  console.log("fasodfo" + user);
   done(null, user);
 });
 
-passport.deserializeUser(function(obj, done) {
-  console.log(obj);
-  done(null, obj);
+passport.deserializeUser(function(user, done) {
+  done(null, user);
 });
 
 // passport setup using a Google strategy.
@@ -62,7 +60,7 @@ passport.use(
                   if (error) {
                     console.log(error);
                   } else {
-                    console.log("added the user to the database");
+                    console.log("Added the user to the database");
                     console.log(result);
                   }
                 }

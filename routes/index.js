@@ -13,7 +13,7 @@ let pool = new pg.Pool({
 
 module.exports = app => {
   // connecting to and making a GET request to our postgres database
-  app.get("/recipes", (req, res) => {
+  app.get("/api/recipes", (req, res) => {
     pool.connect((err, client, done) => {
       client.query("SELECT * FROM recipe", (error, result) => {
         done();
@@ -37,7 +37,7 @@ module.exports = app => {
   });
 
   // connecting to and making a POST request to our postgres database
-  app.post("/recipe", (req, res) => {
+  app.post("/api/recipe", (req, res) => {
     const data = {
       title: req.body.title,
       prep: req.body.prep,
@@ -75,7 +75,7 @@ module.exports = app => {
   });
 
   // connecting to and making a GET request to our postgres database by ID
-  app.get("/recipe/:id", (req, res) => {
+  app.get("/api/recipe/:id", (req, res) => {
     pool.connect((err, client, done) => {
       client.query(
         "SELECT * FROM recipe WHERE id = $1",
@@ -95,7 +95,7 @@ module.exports = app => {
     });
   });
 
-  app.delete("/recipe/:id", (req, res) => {
+  app.delete("/api/recipe/:id", (req, res) => {
     pool.connect((err, client, done) => {
       client.query(
         "DELETE FROM recipe WHERE id = $1",
