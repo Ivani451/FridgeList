@@ -1,5 +1,15 @@
 import axios from "axios";
-import { FETCH_FOOD, FETCH_INFO, FETCH_RECIPES, DELETE_RECIPE } from "./types";
+import {
+  FETCH_FOOD,
+  FETCH_INFO,
+  FETCH_RECIPES,
+  DELETE_RECIPE,
+  FETCH_USER
+} from "./types";
+
+export const fetchUser = () => {
+  axios.get("/api/current_user");
+};
 
 export const fetchFood = (...food) => async dispatch => {
   // The call to our Food API is set up and triggered
