@@ -21,7 +21,7 @@ class App extends Component {
               <Header />
             </header>
 
-            <Route exact strict path="/" component={withRouter(Home)} />
+            <Route exact path="/" component={withRouter(Home)} />
             <Route
               exact
               strict

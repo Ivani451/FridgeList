@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 // Header/Navigation bar on top of web page
 export default function Header() {
   return (
-    <ul className="top-nav">
+    <nav className="top-nav">
       <span id="header-logo">
         <h3>Fridge List</h3>
       </span>
@@ -21,9 +21,9 @@ export default function Header() {
         <p>Add Recipe</p>
       </NavLink>
 
-      <NavLink to="/auth/google/" className="header-button">
+      <a href="/auth/google/" className="header-button">
         <p>Login with Google</p>
-      </NavLink>
-    </ul>
+      </a>
+    </nav>
   );
 }
