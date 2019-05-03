@@ -21,11 +21,7 @@ export default function Header() {
         <p>Add Recipe</p>
       </NavLink>
 
-      <NavLink
-        to="/auth/google/"
-        activeClassName="active"
-        className="header-button"
-      >
+      <NavLink to="/auth/google/" className="header-button">
         <p>Login with Google</p>
       </NavLink>
     </ul>

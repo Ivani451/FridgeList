@@ -1,11 +1,13 @@
 import { combineReducers } from "redux";
-import FoodReducer from "./reducer_food";
-import InfoReducer from "./reducer_info";
+import foodReducer from "./foodReducer";
+import infoReducer from "./infoReducer";
+import authReducer from "./authReducer";
 import { reducer as formReducer } from "redux-form";
 
 const rootReducer = combineReducers({
-  food: FoodReducer,
-  info: InfoReducer,
+  food: foodReducer,
+  info: infoReducer,
+  auth: authReducer,
   form: formReducer
 });
 
