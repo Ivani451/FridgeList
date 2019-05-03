@@ -1,17 +1,18 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-// Header/Navigation bar on top of web page
+// Header/Navigation bar on top of web page. NavLink used for quicker navigation. Hyperlink tags used for refreshing the page in order to
+// be directed into the oauth flow when clicking on the login button and to clear previous search results when clicking the home button.
 export default function Header() {
   return (
-    <nav className="top-nav">
-      <span id="header-logo">
+    <nav id="main-header">
+      <a href="/" id="header-logo">
         <h3>Fridge List</h3>
-      </span>
+      </a>
 
-      <NavLink to="/" activeClassName="active" className="header-button">
+      <a href="/" className="header-button">
         <p>Home</p>
-      </NavLink>
+      </a>
 
       <NavLink
         to="/recipe/new"

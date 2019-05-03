@@ -17,9 +17,7 @@ class App extends Component {
       <Router>
         <Switch>
           <div className="container">
-            <header id="main-header">
-              <Header />
-            </header>
+            <Header />
 
             <Route exact path="/" component={withRouter(Home)} />
             <Route
