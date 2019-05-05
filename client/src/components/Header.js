@@ -22,7 +22,7 @@ export default function Header() {
         <p>Add Recipe</p>
       </NavLink>
 
-      <a href="/auth/google/" className="header-button">
+      <a href="/auth/google/" className="header-button" id="google-login">
         <p>Login with Google</p>
       </a>
     </nav>
