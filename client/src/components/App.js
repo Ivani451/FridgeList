@@ -1,17 +1,23 @@
 import React, { Component } from "react";
-import Home from "./Home";
-import FoodInfo from "containers/FoodInfo";
-import RecipeForm from "containers/RecipeForm";
-import Header from "./Header";
-import "../App.scss";
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   withRouter
 } from "react-router-dom";
+import { connect } from "react-redux";
+import * as actions from "../actions";
+import "../App.scss";
+import Home from "./Home";
+import FoodInfo from "containers/FoodInfo";
+import RecipeForm from "containers/RecipeForm";
+import Header from "./Header";
 
 class App extends Component {
+  componentDidMount() {
+    this.props.fetchUser();
+  }
+
   render() {
     return (
       <Router>
@@ -38,4 +44,7 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(
+  null,
+  actions
+)(App);

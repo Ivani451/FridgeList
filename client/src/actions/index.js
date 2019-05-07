@@ -8,7 +8,11 @@ import {
 } from "./types";
 
 export const fetchUser = () => {
-  axios.get("/api/current_user");
+  return function(dispatch) {
+    axios
+      .get("/api/current_user")
+      .then(res => dispatch({ type: FETCH_USER, payload: res }));
+  };
 };
 
 export const fetchFood = (...food) => async dispatch => {
