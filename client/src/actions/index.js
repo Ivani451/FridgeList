@@ -7,12 +7,10 @@ import {
   FETCH_USER
 } from "./types";
 
-export const fetchUser = () => {
-  return function(dispatch) {
-    axios
-      .get("/api/current_user")
-      .then(res => dispatch({ type: FETCH_USER, payload: res }));
-  };
+// fetchUser action creator used to check if user is logged in or not
+export const fetchUser = () => async dispatch => {
+  const res = await axios.get("/api/current_user");
+  dispatch({ type: FETCH_USER, payload: res.data });
 };
 
 export const fetchFood = (...food) => async dispatch => {
