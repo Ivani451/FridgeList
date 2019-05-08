@@ -5,6 +5,21 @@ import { NavLink } from "react-router-dom";
 // Header/Navigation bar on top of web page. NavLink used for quicker navigation. Hyperlink tags used for refreshing the page in order to
 // be directed into the oauth flow when clicking on the login button and to clear previous search results when clicking the home button.
 class Header extends Component {
+  renderContent() {
+    switch (this.props.auth) {
+      case null:
+        return;
+      case false:
+        return <p>Login with Google</p>;
+      default:
+        return (
+          <a href="/api/logout/" className="header-button" id="google-login">
+            Logout
+          </a>
+        );
+    }
+  }
+
   render() {
     console.log(this.props);
     return (
@@ -26,7 +41,7 @@ class Header extends Component {
         </NavLink>
 
         <a href="/auth/google/" className="header-button" id="google-login">
-          <p>Login with Google</p>
+          {this.renderContent()}
         </a>
       </nav>
     );
