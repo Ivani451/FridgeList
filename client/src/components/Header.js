@@ -10,11 +10,15 @@ class Header extends Component {
       case null:
         return;
       case false:
-        return <p>Login with Google</p>;
+        return (
+          <a href="/auth/google/" className="header-button" id="google-login">
+            <p>Login with Google</p>
+          </a>
+        );
       default:
         return (
           <a href="/api/logout/" className="header-button" id="google-login">
-            Logout
+            <p>Logout</p>
           </a>
         );
     }
@@ -40,9 +44,7 @@ class Header extends Component {
           <p>Add Recipe</p>
         </NavLink>
 
-        <a href="/auth/google/" className="header-button" id="google-login">
-          {this.renderContent()}
-        </a>
+        {this.renderContent()}
       </nav>
     );
   }

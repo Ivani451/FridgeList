@@ -11,12 +11,15 @@ body {
     margin: 0;
 
     #header-logo {
+      color: white;
+      border: 3px solid black;
+      background-color: #3dc77b;
+      box-shadow: 5px 10px #2a8d57;
       padding: 0em 1em 0em 1em;
       margin-right: 5em;
       font-family: monospace;
       font-size: 1.5em;
       text-decoration: none;
-      color: white;
     }
 
     .header-button {
