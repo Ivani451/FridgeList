@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { NavLink } from "react-router-dom";
+import LoggedOnHeader from "./LoggedOnHeader";
+import LoggedOffHeader from "./LoggedOffHeader";
 
 // Header/Navigation bar on top of web page. NavLink used for quicker navigation. Hyperlink tags used for refreshing the page in order to
 // be directed into the oauth flow when clicking on the login button and to clear previous search results when clicking the home button.
@@ -10,43 +11,17 @@ class Header extends Component {
       case null:
         return;
       case false:
-        return (
-          <a href="/auth/google/" className="header-button" id="google-login">
-            <p>Login with Google</p>
-          </a>
-        );
+        return <LoggedOffHeader />;
       default:
-        return (
-          <a href="/api/logout/" className="header-button" id="google-login">
-            <p>Logout</p>
-          </a>
-        );
+        return <LoggedOnHeader />;
     }
   }
 
+  // NavLink used for quicker navigation to the "new recipe" page. Otherwise, a regular "href" element is used to refresh page completely.
+  // Google login button is rendered differently based on user authentication
   render() {
     console.log(this.props);
-    return (
-      <nav id="main-header">
-        <a href="/" id="header-logo">
-          <h3>Fridge List</h3>
-        </a>
-
-        <a href="/" className="header-button">
-          <p>Home</p>
-        </a>
-
-        <NavLink
-          to="/recipe/new"
-          activeClassName="active"
-          className="header-button"
-        >
-          <p>Add Recipe</p>
-        </NavLink>
-
-        {this.renderContent()}
-      </nav>
-    );
+    return <span>{this.renderContent()}</span>;
   }
 }
 
