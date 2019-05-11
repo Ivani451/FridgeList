@@ -12,6 +12,7 @@ import Home from "./Home";
 import FoodInfo from "containers/FoodInfo";
 import RecipeForm from "containers/RecipeForm";
 import Header from "./Header";
+import Landing from "./Landing";
 
 class App extends Component {
   componentDidMount() {
@@ -25,7 +26,9 @@ class App extends Component {
           <div className="container">
             <Header />
 
-            <Route exact path="/" component={withRouter(Home)} />
+            <Route exact path="/" component={withRouter(Landing)} />
+            <Route exact path="/recipes" component={withRouter(Home)} />
+
             <Route
               exact
               strict
