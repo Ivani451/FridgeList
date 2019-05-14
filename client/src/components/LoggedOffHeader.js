@@ -4,8 +4,8 @@ import React from "react";
 const LoggedOffHeader = () => {
   return (
     <nav id="main-header">
-      <a href="/Landing" id="header-logo">
-        <h3>Fridge List</h3>
+      <a href="/Landing" id="header-logo" style={{ marginLeft: "3em" }}>
+        <h2>Fridge List</h2>
       </a>
 
       <a href="/auth/google/" className="header-button" id="google-login">
