@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SearchBar from "containers/SearchBar";
 import FoodList from "containers/FoodList";
+import MyRecipes from "containers/MyRecipes";
 
 class Home extends Component {
   render() {
@@ -8,6 +9,7 @@ class Home extends Component {
       <div id="home">
         <SearchBar />
         <FoodList />
+        <MyRecipes />
       </div>
     );
   }
