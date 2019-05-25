@@ -7,12 +7,25 @@ class MyRecipes extends Component {
     this.props.fetchMyRecipes();
   }
 
+  renderRecipes() {
+    return this.props.recipes.map(recipes => {
+      return (
+        <div>
+          <div id="myRecipe">
+            <h3>{recipes.title}</h3>
+            <p>{recipes.servings}</p>
+            <p>{recipes.ingredients}</p>
+            <p>{recipes.instructions}</p>
+            <p>{recipes.author}</p>
+            <p>{recipes.prep}</p>
+          </div>
+        </div>
+      );
+    });
+  }
+
   render() {
-    return (
-      <div>
-        <h1>HELLO</h1>
-      </div>
-    );
+    return <div>{this.renderRecipes()}</div>;
   }
 }
 

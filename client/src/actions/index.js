@@ -52,7 +52,7 @@ export const fetchInfo = foodId => async dispatch => {
 
 // Fetch the user's personal recipes
 export const fetchMyRecipes = () => async dispatch => {
-  const res = await axios.get("/recipe");
+  const res = await axios.get("/api/recipes");
 
   dispatch({ type: FETCH_RECIPES, payload: res.data });
 };

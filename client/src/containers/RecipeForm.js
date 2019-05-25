@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { reduxForm, Field } from "redux-form";
 import RecipeField from "./RecipeField";
 import InstructionsField from "./InstructionsField";
+import MyRecipes from "./MyRecipes";
 // import Upload from "./Upload";
 
 // Array of objects, each with properties corresponding to a specific
@@ -41,6 +42,8 @@ class RecipeForm extends Component {
             Submit
           </button>
         </form>
+
+        <MyRecipes />
       </div>
     );
   }
