@@ -11,6 +11,7 @@ import "../App.scss";
 import Home from "./Home";
 import FoodInfo from "containers/FoodInfo";
 import RecipeForm from "containers/RecipeForm";
+import RecipeSearch from "containers/RecipeSearch";
 import Header from "./Header";
 import Landing from "./Landing";
 
@@ -39,6 +40,12 @@ class App extends Component {
               exact
               path="/recipe/new"
               component={withRouter(RecipeForm)}
+            />
+
+            <Route
+              exact
+              path="/recipe/search"
+              component={withRouter(RecipeSearch)}
             />
           </div>
         </Switch>

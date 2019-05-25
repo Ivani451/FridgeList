@@ -1,17 +1,12 @@
-import React, { Component } from "react";
-import SearchBar from "containers/SearchBar";
-import FoodList from "containers/FoodList";
-// import MyRecipes from "containers/MyRecipes";
+import React from "react";
+import MyRecipes from "containers/MyRecipes";
 
-class Home extends Component {
-  render() {
-    return (
-      <div id="home">
-        <SearchBar />
-        <FoodList />
-      </div>
-    );
-  }
-}
+const Home = () => {
+  return (
+    <div id="home">
+      <MyRecipes />
+    </div>
+  );
+};
 
 export default Home;

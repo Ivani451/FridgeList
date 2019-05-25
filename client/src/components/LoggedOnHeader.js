@@ -24,6 +24,10 @@ const LoggedOnHeader = () => {
         <p>Add Recipe</p>
       </NavLink>
 
+      <a href="/recipe/search" className="header-button">
+        <p>Search Recipes</p>
+      </a>
+
       <a href="/api/logout/" className="header-button" id="google-login">
         <p>Logout</p>
       </a>
