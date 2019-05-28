@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchMyRecipes, deleteRecipe } from "../actions";
+import { bindActionCreators } from "redux";
 
-class MyRecipes extends Component {
+class MyRecipesList extends Component {
   componentDidMount() {
     this.props.fetchMyRecipes();
   }
@@ -11,7 +12,7 @@ class MyRecipes extends Component {
     return this.props.recipes.map(recipes => {
       return (
         <div>
-          <div id="myRecipe">
+          <div>
             <h3>{recipes.title}</h3>
             <p>{recipes.servings}</p>
             <p>{recipes.ingredients}</p>
@@ -25,19 +26,19 @@ class MyRecipes extends Component {
   }
 
   render() {
-    return <div>{this.renderRecipes()}</div>;
+    return <div id="myRecipe">{this.renderRecipes()}</div>;
   }
 }
 
-function mapStateToProps({ recipes }) {
-  return { recipes };
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchMyRecipes }, dispatch);
 }
 
 export default connect(
-  mapStateToProps,
+  null,
   { fetchMyRecipes, deleteRecipe }
-)(MyRecipes);
+)(MyRecipesList);
 
 /*
-Need to connect component to actions/state via react-redux
+Need to connect component to actions via react-redux
 */

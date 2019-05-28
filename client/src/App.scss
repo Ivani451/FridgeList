@@ -184,6 +184,12 @@ body {
   }
 
   #myRecipe {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 250px;
+    width: 250px;
+    margin: 2em;
     border: 2px solid black;
   }
 }
