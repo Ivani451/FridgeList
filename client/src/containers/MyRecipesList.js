@@ -1,8 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { fetchMyRecipes } from "../actions";
 import MyRecipe from "./MyRecipe";
 
 class MyRecipesList extends Component {
+  componentDidMount() {
+    this.props.fetchMyRecipes();
+  }
+
   render() {
     return (
       <div>
@@ -12,13 +18,17 @@ class MyRecipesList extends Component {
   }
 }
 
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchMyRecipes }, dispatch);
+}
+
 function mapStateToProps({ recipes }) {
   return { recipes };
 }
 
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(MyRecipesList);
 
 /*

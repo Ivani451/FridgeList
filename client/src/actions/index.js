@@ -4,7 +4,8 @@ import {
   FETCH_INFO,
   FETCH_RECIPES,
   DELETE_RECIPE,
-  FETCH_USER
+  FETCH_USER,
+  FETCH_MY_RECIPE
 } from "./types";
 
 // fetchUser action creator used to check if user is logged in or not
@@ -50,11 +51,17 @@ export const fetchInfo = foodId => async dispatch => {
   dispatch({ type: FETCH_INFO, payload: res });
 };
 
-// Fetch the user's personal recipes
+// Fetch all the user's saved recipes
 export const fetchMyRecipes = () => async dispatch => {
   const res = await axios.get("/api/recipes");
 
   dispatch({ type: FETCH_RECIPES, payload: res.data });
+};
+
+// Fetch a specific user-saved recipe
+export const fetchMyRecipeInfo = id => async dispatch => {
+  const res = await axios.get(`/api/recipe/${id}`, id);
+  dispatch({ type: FETCH_MY_RECIPE, payload: res.data });
 };
 
 export const deleteRecipe = (id, history) => async dispatch => {
