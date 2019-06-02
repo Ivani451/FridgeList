@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { fetchMyRecipeInfo } from "../actions";
 import { bindActionCreators } from "redux";
 
@@ -8,10 +9,12 @@ class MyRecipe extends Component {
     return this.props.recipes.map(recipes => {
       return (
         <div>
-          <div onClick={() => this.props.fetchMyRecipeInfo(recipes.id)}>
-            <h3>{recipes.title}</h3>
-            <p>{recipes.author}</p>
-          </div>
+          <Link to={"/recipe/" + recipes.id}>
+            <div onClick={() => this.props.fetchMyRecipeInfo(recipes.id)}>
+              <h3>{recipes.title}</h3>
+              <p>{recipes.author}</p>
+            </div>
+          </Link>
         </div>
       );
     });

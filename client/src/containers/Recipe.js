@@ -14,11 +14,10 @@ class Recipe extends Component {
         {food.map(recipe => {
           return (
             <div>
-              {" "}
-              <Link to="/recipe">
+              <Link to={"/recipe/" + recipe.id}>
                 <div
-                  key={recipe.id}
                   className="indiv-recipe"
+                  key={recipe.id}
                   style={{
                     backgroundImage: "url(" + recipe.image + ")"
                   }}

@@ -33,7 +33,7 @@ class App extends Component {
             <Route
               exact
               strict
-              path="/recipe"
+              path="/recipe/:id"
               component={withRouter(FoodInfo)}
             />
             <Route
