@@ -183,7 +183,7 @@ body {
     }
   }
 
-  #myRecipe {
+  #my-recipe {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -191,5 +191,21 @@ body {
     width: 250px;
     margin: 2em;
     border: 2px solid black;
+    text-align: center;
   }
 }
+
+// .food-container {
+//   display: flex;
+//   flex-wrap: wrap;
+//   text-align: center;
+//   justify-content: center;
+
+//   .indiv-recipe {
+//     height: 250px;
+//     width: 250px;
+//     margin: 1.5em;
+//     font-family: Georgia;
+//     font-size: 40%;
+//     background-repeat: no-repeat;
+//   }

@@ -1,7 +1,11 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { reduxForm, Field } from "redux-form";
+import { bindActionCreators } from "redux";
+import { submitRecipe } from "../actions";
 import RecipeField from "./RecipeField";
 import InstructionsField from "./InstructionsField";
+
 // import Upload from "./Upload";
 
 // Array of objects, each with properties corresponding to a specific
@@ -33,7 +37,11 @@ class RecipeForm extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.props.handleSubmit(values => console.log(values))}>
+        <form
+          onSubmit={this.props.handleSubmit(values =>
+            this.props.submitRecipe(values)
+          )}
+        >
           {this.renderFields()}
           {/* <Upload /> */}
 
@@ -45,6 +53,21 @@ class RecipeForm extends Component {
     );
   }
 }
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ submitRecipe }, dispatch);
+}
+
+/*
+
+Need to attach action creator to submit button.
+Look Below
+*/
+
+RecipeForm = connect(
+  null,
+  mapDispatchToProps
+)(RecipeForm);
 
 export default reduxForm({
   form: "recipeForm"

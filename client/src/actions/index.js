@@ -71,7 +71,14 @@ export const deleteRecipe = (id, history) => async dispatch => {
 };
 
 export const submitRecipe = values => async dispatch => {
-  const res = await axios.post("/recipe", values);
+  const res = await axios.post("/api/recipe", values);
 
-  dispatch({ type: FETCH_RECIPES, payload: res.data });
+  dispatch({ type: FETCH_USER, payload: res.data });
 };
+
+// may need to change this - not sure if authReducer applies here.
+// export const submitMyRecipe = values => async dispatch => {
+//   const res = await axios.post("/api/recipes", values);
+
+//   dispatch({ type: FETCH_USER, payload: res.data });
+// };
