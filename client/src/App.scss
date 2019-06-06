@@ -184,14 +184,20 @@ body {
   }
 
   #my-recipe {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: block;
     height: 250px;
     width: 250px;
     margin: 2em;
+    padding: 1em;
     border: 2px solid black;
     text-align: center;
+  }
+
+  #all-my-recipes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
