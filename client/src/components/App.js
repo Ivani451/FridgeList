@@ -14,6 +14,7 @@ import RecipeForm from "containers/RecipeForm";
 import RecipeSearch from "containers/RecipeSearch";
 import Header from "./Header";
 import Landing from "./Landing";
+import MyFoodInfo from "containers/MyFoodInfo";
 
 class App extends Component {
   componentDidMount() {
@@ -36,6 +37,14 @@ class App extends Component {
               path="/recipe/:id"
               component={withRouter(FoodInfo)}
             />
+
+            <Route
+              exact
+              strict
+              path="/my-recipe/:id"
+              component={withRouter(MyFoodInfo)}
+            />
+
             <Route
               exact
               path="/recipe/new"

@@ -8,14 +8,17 @@ class MyRecipe extends Component {
   renderRecipes() {
     return this.props.recipes.map(recipes => {
       return (
-        <Link to={"/recipe/" + recipes.id}>
-          <div id="my-recipe">
-            <div onClick={() => this.props.fetchMyRecipeInfo(recipes.id)}>
+        <div>
+          <Link to={"/my-recipe/" + recipes.id}>
+            <div
+              id="my-recipe"
+              onClick={() => this.props.fetchMyRecipeInfo(recipes.id)}
+            >
               <h3>{recipes.title}</h3>
               <p>{recipes.author}</p>
             </div>
-          </div>
-        </Link>
+          </Link>
+        </div>
       );
     });
   }
