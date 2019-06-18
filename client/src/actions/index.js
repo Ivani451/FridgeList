@@ -65,6 +65,7 @@ export const fetchMyRecipes = () => async dispatch => {
 
 // Fetch a specific user-saved recipe
 export const fetchMyRecipeInfo = id => async dispatch => {
+  console.log(id);
   const res = await axios.get(`/api/recipe/${id}`, id);
   dispatch({ type: FETCH_MY_RECIPE, payload: res.data });
 };
