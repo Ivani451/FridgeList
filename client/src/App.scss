@@ -200,3 +200,15 @@ body {
     justify-content: center;
   }
 }
+
+#my-food-info {
+  border: 1px solid black;
+  background-color: white;
+  margin: 7%;
+  padding: 2em;
+
+  #food-title {
+    text-decoration: underline;
+    font-size: 200%;
+  }
+}
