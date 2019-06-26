@@ -22,7 +22,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// importing and using the routes with express
+// importing and using the route handlers with the express app
 require("./routes")(app);
 require("./routes/authRoutes")(app);
 
@@ -37,11 +37,22 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.get("/", (req, res) =>
-  res.status(200).send({
-    message: "Welcome to the default API route"
-  })
-);
+if (process.env.NODE_ENV === "production") {
+  // If we're in the production environment, then we will serve our production code
+  app.use(express.static("client/build"));
+
+  // if the route is not recognized by express, then index.html is still served
+  const path = require("path");
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
+
+// app.get("/", (req, res) =>
+//   res.status(200).send({
+//     message: "Welcome to the default API route"
+//   })
+// );
 
 const PORT = process.env.PORT || 5000;
 
