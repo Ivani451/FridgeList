@@ -1,19 +1,19 @@
 import React from "react";
-import { shallow } from "enzyme";
-import Home from "../Home";
-import SearchBar from "containers/SearchBar";
-import FoodList from "containers/FoodList";
+import { MemoryRouter } from "react-router-dom";
+import { mount } from "enzyme";
+import App from "../App";
+import Landing from "../Landing";
 
 let wrapped;
 
 beforeEach(() => {
-  wrapped = shallow(<Home />);
+  wrapped = mount(
+    <MemoryRouter initialEngtries={["/"]}>
+      <App />
+    </MemoryRouter>
+  );
 });
 
-it("renders SearchBar without crashing", () => {
-  expect(wrapped.find(SearchBar).length).toEqual(1);
-});
-
-it("renders FoodList without crashing", () => {
-  expect(wrapped.find(FoodList).length).toEqual(1);
+it("renders Header without crashing", () => {
+  expect(wrapped.find(Landing).length).toEqual(1);
 });
