@@ -76,7 +76,7 @@ body {
     background-color: #36b46f;
     color: white;
     font-family: Verdana, sans-serif;
-    margin: 0;
+    margin: 0 0 4em 0;
 
     #header-logo {
       color: white;
@@ -183,19 +183,24 @@ body {
     }
   }
 
-  #my-recipe {
-    display: block;
+  #my-recipe-box {
     height: 250px;
     width: 250px;
-    margin: 2em;
+    margin: 1em;
     padding: 1em;
-    border: 1px solid black;
-    text-align: center;
-    box-shadow: 5px 6px 6px grey;
 
-    h3 {
-      text-decoration: underline;
-      font-family: Arial, Helvetica, sans-serif;
+    #my-recipe {
+      display: block;
+      height: 250px;
+      width: 250px;
+      border: 1px solid black;
+      text-align: center;
+      box-shadow: 5px 6px 6px grey;
+
+      h3 {
+        text-decoration: underline;
+        font-family: Arial, Helvetica, sans-serif;
+      }
     }
   }
 

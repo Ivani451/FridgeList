@@ -8,7 +8,7 @@ class MyRecipe extends Component {
   renderRecipes() {
     return this.props.recipes.map(recipes => {
       return (
-        <div>
+        <div id="my-recipe-box">
           <Link
             to={"/my-recipe/" + recipes.id}
             style={{ color: "inherit", textDecoration: "inherit" }}

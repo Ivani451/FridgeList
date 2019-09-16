@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Recipe from "./Recipe";
 
 // the recipe is passed down to the props from our database as an object
 class MyFoodInfo extends Component {
@@ -31,9 +30,7 @@ class MyFoodInfo extends Component {
           {recipe.instructions}
         </p>
 
-        <p>
-          By <a>{recipe.author}</a>
-        </p>
+        <p>By {recipe.author}</p>
       </div>
     );
   }
