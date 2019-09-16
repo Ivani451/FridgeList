@@ -9,13 +9,16 @@ class MyRecipe extends Component {
     return this.props.recipes.map(recipes => {
       return (
         <div>
-          <Link to={"/my-recipe/" + recipes.id}>
+          <Link
+            to={"/my-recipe/" + recipes.id}
+            style={{ color: "inherit", textDecoration: "inherit" }}
+          >
             <div
               id="my-recipe"
               onClick={() => this.props.fetchMyRecipeInfo(recipes.id)}
             >
               <h3>{recipes.title}</h3>
-              <p>{recipes.author}</p>
+              <p>By {recipes.author}</p>
             </div>
           </Link>
         </div>
