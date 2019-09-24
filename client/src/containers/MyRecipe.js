@@ -9,6 +9,20 @@ class MyRecipe extends Component {
     return this.props.recipes.map(recipes => {
       return (
         <div id="my-recipe-box">
+          <button
+            className="delete-button"
+            onClick={() => {
+              if (
+                window.confirm("Are you sure you wish to delete this item?")
+              ) {
+                this.props.deleteRecipe(recipes.id);
+                window.location.reload();
+              }
+            }}
+          >
+            x
+          </button>
+
           <Link
             to={"/my-recipe/" + recipes.id}
             style={{ color: "inherit", textDecoration: "inherit" }}
@@ -17,19 +31,6 @@ class MyRecipe extends Component {
               id="my-recipe"
               onClick={() => this.props.fetchMyRecipeInfo(recipes.id)}
             >
-              <div
-                className="delete-button"
-                onClick={() => {
-                  if (
-                    window.confirm("Are you sure you wish to delete this item?")
-                  ) {
-                    this.props.deleteRecipe(recipes.id);
-                  }
-                }}
-              >
-                x
-              </div>
-
               <h3>{recipes.title}</h3>
               <p>By {recipes.author}</p>
               <hr />
