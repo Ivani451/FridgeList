@@ -10,9 +10,9 @@ export default function(state = [], action) {
       console.log(action.payload.recipes);
       return action.payload.recipes;
     case FETCH_MY_RECIPE:
-      console.log(action.payload.result);
       return action.payload.result;
     case DELETE_RECIPE:
+      console.log("recipes reducer before payload");
       return action.payload;
     default:
       return state;

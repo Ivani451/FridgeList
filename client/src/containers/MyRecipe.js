@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchMyRecipeInfo } from "../actions";
+import { fetchMyRecipeInfo, deleteRecipe } from "../actions";
 import { bindActionCreators } from "redux";
 
 class MyRecipe extends Component {
@@ -17,8 +17,22 @@ class MyRecipe extends Component {
               id="my-recipe"
               onClick={() => this.props.fetchMyRecipeInfo(recipes.id)}
             >
+              <div
+                className="delete-button"
+                onClick={() => {
+                  if (
+                    window.confirm("Are you sure you wish to delete this item?")
+                  ) {
+                    this.props.deleteRecipe(recipes.id);
+                  }
+                }}
+              >
+                x
+              </div>
+
               <h3>{recipes.title}</h3>
               <p>By {recipes.author}</p>
+              <hr />
             </div>
           </Link>
         </div>
@@ -32,7 +46,7 @@ class MyRecipe extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchMyRecipeInfo }, dispatch);
+  return bindActionCreators({ fetchMyRecipeInfo, deleteRecipe }, dispatch);
 }
 
 export default connect(

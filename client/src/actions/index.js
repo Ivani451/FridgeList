@@ -71,8 +71,8 @@ export const fetchMyRecipeInfo = id => async dispatch => {
 };
 
 export const deleteRecipe = (id, history) => async dispatch => {
-  const res = await axios.delete(`/api/submissions/delete/${id}`, id);
-  history.push("/submissions");
+  console.log("it got here at least");
+  const res = await axios.delete(`/api/recipe/${id}`, id);
   dispatch({ type: DELETE_RECIPE, payload: res.data });
 };
 
