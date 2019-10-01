@@ -77,6 +77,7 @@ export const deleteRecipe = (id, history) => async dispatch => {
 };
 
 export const submitRecipe = values => async dispatch => {
+  console.log(values);
   const res = await axios.post("/api/recipe", values);
 
   dispatch({ type: FETCH_USER, payload: res.data });

@@ -1,5 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { submitRecipe } from "../actions";
+
+/*
+***************** hook up submitRecipe action to take all of our values and save
+them in the database so that someone elses recipe will show up on our dashboard
+as it was our own ***********************
+right now, the save button doesn't do anything... so, do tha
+*/
 
 class FoodInfo extends Component {
   renderInfo(food) {
@@ -32,6 +41,16 @@ class FoodInfo extends Component {
         <p>
           By <a href={food.sourceUrl}>{food.creditsText}</a>
         </p>
+
+        <button
+          onClick={() => {
+            if (window.confirm("Are you sure you wish to save this item?")) {
+              this.props.submitRecipe(food);
+            }
+          }}
+        >
+          save
+        </button>
       </div>
     );
   }
@@ -51,7 +70,11 @@ function mapStateToProps({ info }) {
   };
 }
 
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ submitRecipe }, dispatch);
+}
+
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(FoodInfo);
