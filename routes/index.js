@@ -38,13 +38,21 @@ module.exports = app => {
 
   // connecting to and making a POST request to our postgres database
   app.post("/api/recipe", (req, res) => {
+    console.log(req.body.sourceUrl);
+    console.log(req.body);
+
+    let mapped = req.body.extendedIngredients.map(item => item.name);
+    let cool = Object.values(mapped);
+    console.log(cool);
+
     const data = {
       title: req.body.title,
-      prep: req.body.prep,
+      prep: req.body.preparationMinutes,
       servings: req.body.servings,
-      ingredients: req.body.ingredients,
+      ingredients: cool,
       instructions: req.body.instructions,
-      author: req.body.author
+      author: req.body.creditsText,
+      source: req.body.sourceUrl
     };
 
     pool.connect((err, client, done) => {
@@ -54,14 +62,14 @@ module.exports = app => {
         data.servings,
         data.ingredients,
         data.instructions,
-        data.author
+        data.author,
+        data.source
       ];
 
       const query =
-        "INSERT INTO recipe(title, prep, servings, ingredients, instructions, author) VALUES($1, $2, $3, $4, $5, $6) RETURNING *";
+        "INSERT INTO recipe(title, prep, servings, ingredients, instructions, author, source) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *";
 
       client.query(query, values, (error, result) => {
-        console.log(req.body);
         done();
         if (error) {
           return res.status(400).json({ error });
@@ -83,7 +91,6 @@ module.exports = app => {
         (error, result) => {
           done();
           if (error) {
-            console.log(req.params.id);
             return res.status(400).json({ error });
           }
           res.status(202).json({
@@ -103,7 +110,6 @@ module.exports = app => {
         (error, result) => {
           done();
           if (error) {
-            console.log(req.params.id);
             return res.status(400).json({ error });
           }
           res.status(202).json({

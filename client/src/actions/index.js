@@ -6,7 +6,8 @@ import {
   DELETE_RECIPE,
   FETCH_USER,
   FETCH_MY_RECIPE,
-  FETCH_MY_INFO
+  FETCH_MY_INFO,
+  SUBMIT_RECIPE
 } from "./types";
 
 // fetchUser action creator used to check if user is logged in or not
@@ -65,27 +66,19 @@ export const fetchMyRecipes = () => async dispatch => {
 
 // Fetch a specific user-saved recipe
 export const fetchMyRecipeInfo = id => async dispatch => {
-  console.log(id);
   const res = await axios.get(`/api/recipe/${id}`, id);
   dispatch({ type: FETCH_MY_RECIPE, payload: res.data });
 };
 
+// Delete a recipe with the given id
 export const deleteRecipe = (id, history) => async dispatch => {
-  console.log("it got here at least");
   const res = await axios.delete(`/api/recipe/${id}`, id);
   dispatch({ type: DELETE_RECIPE, payload: res.data });
 };
 
+// Take the values from the form that the user completed and post these values to our back-end API
 export const submitRecipe = values => async dispatch => {
-  console.log(values);
   const res = await axios.post("/api/recipe", values);
 
-  dispatch({ type: FETCH_USER, payload: res.data });
+  dispatch({ type: SUBMIT_RECIPE, payload: res.data });
 };
-
-// may need to change this - not sure if authReducer applies here.
-// export const submitMyRecipe = values => async dispatch => {
-//   const res = await axios.post("/api/recipes", values);
-
-//   dispatch({ type: FETCH_USER, payload: res.data });
-// };

@@ -1,7 +1,8 @@
 import {
   FETCH_RECIPES,
   DELETE_RECIPE,
-  FETCH_MY_RECIPE
+  FETCH_MY_RECIPE,
+  SUBMIT_RECIPE
 } from "../actions/types";
 
 export default function(state = [], action) {
@@ -11,7 +12,8 @@ export default function(state = [], action) {
     case FETCH_MY_RECIPE:
       return action.payload.result;
     case DELETE_RECIPE:
-      console.log("recipes reducer before payload");
+      return action.payload;
+    case SUBMIT_RECIPE:
       return action.payload;
     default:
       return state;

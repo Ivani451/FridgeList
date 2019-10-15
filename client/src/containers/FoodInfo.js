@@ -3,13 +3,6 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { submitRecipe } from "../actions";
 
-/*
-***************** hook up submitRecipe action to take all of our values and save
-them in the database so that someone elses recipe will show up on our dashboard
-as it was our own ***********************
-right now, the save button doesn't do anything... so, do tha
-*/
-
 class FoodInfo extends Component {
   renderInfo(food) {
     return (
@@ -64,14 +57,14 @@ class FoodInfo extends Component {
   }
 }
 
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ submitRecipe }, dispatch);
+}
+
 function mapStateToProps({ info }) {
   return {
     info
   };
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ submitRecipe }, dispatch);
 }
 
 export default connect(

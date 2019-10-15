@@ -5,3 +5,4 @@ export const DELETE_RECIPE = "delete_recipe";
 export const FETCH_USER = "fetch_user";
 export const FETCH_MY_RECIPE = "fetch_my_recipe";
 export const FETCH_MY_INFO = "fetch_my_info";
+export const SUBMIT_RECIPE = "submit_recipe";

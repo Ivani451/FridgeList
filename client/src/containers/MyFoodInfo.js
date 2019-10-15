@@ -12,12 +12,12 @@ class MyFoodInfo extends Component {
 
         <p>
           <span>Prep-time: </span>
-          {recipe.prep}
+          {recipe.prep} minutes
         </p>
 
         <p>
           <span>Servings: </span>
-          {recipe.servings}
+          {recipe.servings} servings
         </p>
 
         <div>
