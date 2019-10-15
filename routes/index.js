@@ -52,7 +52,7 @@ module.exports = app => {
       ingredients: cool,
       instructions: req.body.instructions,
       author: req.body.creditsText,
-      source: req.body.sourceUrl
+      sourceUrl: req.body.sourceUrl
     };
 
     pool.connect((err, client, done) => {
@@ -63,7 +63,7 @@ module.exports = app => {
         data.ingredients,
         data.instructions,
         data.author,
-        data.source
+        data.sourceUrl
       ];
 
       const query =

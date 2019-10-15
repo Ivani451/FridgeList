@@ -30,7 +30,7 @@ class MyFoodInfo extends Component {
           {recipe.instructions}
         </p>
 
-        <p>By {recipe.author}</p>
+        <a href={recipe.source}>By {recipe.author}</a>
       </div>
     );
   }
