@@ -70,9 +70,7 @@ body {
     }
   }
 
-  #main-header {
-    display: flex;
-    flex-direction: row;
+  .main-header-large {
     background-color: #36b46f;
     color: white;
     font-family: Verdana, sans-serif;
@@ -85,6 +83,7 @@ body {
       box-shadow: 5px 10px #2a8d57;
       padding: 0em 1em 0em 1em;
       margin-right: 5em;
+      margin-left: 3em;
       font-family: monospace;
       font-size: 1.5em;
       text-decoration: none;
@@ -221,5 +220,29 @@ body {
   #food-title {
     text-decoration: underline;
     font-size: 200%;
+  }
+}
+
+// code below is for responsive nav bar based on screen size
+
+@media screen and (min-width: 801px) {
+  .main-header-large {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+  }
+
+  .main-header-medium {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main-header-large {
+    display: none;
+  }
+
+  .main-header-medium {
+    margin: 0;
   }
 }

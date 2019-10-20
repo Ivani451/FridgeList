@@ -6,6 +6,8 @@ class MyFoodInfo extends Component {
   render() {
     let recipe = this.props.recipes;
 
+    // the data is taken from our recipes reducer and displayed to the user
+
     return (
       <div id="my-food-info">
         <h1 id="food-title">{recipe.title}</h1>
@@ -17,7 +19,7 @@ class MyFoodInfo extends Component {
 
         <p>
           <span>Servings: </span>
-          {recipe.servings} servings
+          {recipe.servings}
         </p>
 
         <div>
@@ -30,7 +32,9 @@ class MyFoodInfo extends Component {
           {recipe.instructions}
         </p>
 
-        <a href={recipe.source}>By {recipe.author}</a>
+        <p>
+          By <a href={recipe.source}>{recipe.author}</a>
+        </p>
       </div>
     );
   }

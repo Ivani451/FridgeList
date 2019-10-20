@@ -7,31 +7,59 @@ import { NavLink } from "react-router-dom";
 */
 const LoggedOnHeader = () => {
   return (
-    <nav id="main-header">
-      <a href="/recipes" id="header-logo">
-        <h3>Fridge List</h3>
-      </a>
+    <div>
+      <nav class="main-header-large">
+        <a href="/recipes" id="header-logo">
+          <h3>Fridge List</h3>
+        </a>
 
-      <a href="/recipes" className="header-button">
-        <p>Home</p>
-      </a>
+        <a href="/recipes" className="header-button">
+          <p>Home</p>
+        </a>
 
-      <NavLink
-        to="/recipe/new"
-        activeClassName="active"
-        className="header-button"
-      >
-        <p>Add Recipe</p>
-      </NavLink>
+        <NavLink
+          to="/recipe/new"
+          activeClassName="active"
+          className="header-button"
+        >
+          <p>Add Recipe</p>
+        </NavLink>
 
-      <a href="/recipe/search" className="header-button">
-        <p>Search Recipes</p>
-      </a>
+        <a href="/recipe/search" className="header-button">
+          <p>Search Recipes</p>
+        </a>
 
-      <a href="/api/logout/" className="header-button" id="google-login">
-        <p>Logout</p>
-      </a>
-    </nav>
+        <a href="/api/logout/" className="header-button" id="google-login">
+          <p>Logout</p>
+        </a>
+      </nav>
+
+      <nav class="main-header-medium">
+        <a href="/recipes" id="header-logo">
+          <h3>Fridge List</h3>
+        </a>
+
+        <a href="/recipes" className="header-button">
+          <p>Home</p>
+        </a>
+
+        <NavLink
+          to="/recipe/new"
+          activeClassName="active"
+          className="header-button"
+        >
+          <p>Add Recipe</p>
+        </NavLink>
+
+        <a href="/recipe/search" className="header-button">
+          <p>Search Recipes</p>
+        </a>
+
+        <a href="/api/logout/" className="header-button" id="google-login">
+          <p>Logout</p>
+        </a>
+      </nav>
+    </div>
   );
 };
 
