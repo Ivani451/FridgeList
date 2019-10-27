@@ -16,6 +16,12 @@ const LoggedOffHeader = () => {
       </nav>
 
       <nav class="main-header-medium">
+        <div id="hamburger_icon">
+          <div class="hamburger_line"></div>
+          <div class="hamburger_line"></div>
+          <div class="hamburger_line"></div>
+        </div>
+
         <a href="/recipes" id="header-logo">
           <h3>Fridge List</h3>
         </a>
