@@ -1,8 +1,12 @@
 import React from "react";
+import SearchBar from "containers/SearchBar";
+import FoodList from "containers/FoodList";
 
 const Landing = () => {
   return (
     <div id="landing-page">
+      <SearchBar />
+      <FoodList />
       <h2 id="landing-info">
         Search for your Favorite Recipes <br /> &amp; Discover New Food
       </h2>

@@ -13,8 +13,12 @@ const LoggedOnHeader = () => {
           <h3>Fridge List</h3>
         </a>
 
-        <a href="/recipes" className="header-button">
+        <a href="/" className="header-button">
           <p>Home</p>
+        </a>
+
+        <a href="/recipes" className="header-button">
+          <p>My Recipes</p>
         </a>
 
         <NavLink
@@ -24,10 +28,6 @@ const LoggedOnHeader = () => {
         >
           <p>Add Recipe</p>
         </NavLink>
-
-        <a href="/recipe/search" className="header-button">
-          <p>Search Recipes</p>
-        </a>
 
         <a href="/api/logout/" className="header-button" id="google-login">
           <p>Logout</p>
@@ -65,10 +65,6 @@ const LoggedOnHeader = () => {
             <p>Add Recipe</p>
           </NavLink>
 
-          <a href="/recipe/search" className="header-button">
-            <p>Search Recipes</p>
-          </a>
-
           <a href="/api/logout/" className="header-button" id="google-login">
             <p>Logout</p>
           </a>
@@ -81,4 +77,8 @@ const LoggedOnHeader = () => {
   );
 };
 
+/*
+  onClick function on the hamburger icon toggles navigation list style from "none" to "block," which displays
+  the hidden navigation bar.
+*/
 export default LoggedOnHeader;
