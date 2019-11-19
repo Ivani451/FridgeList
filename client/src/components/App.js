@@ -26,7 +26,6 @@ class App extends Component {
         <Switch>
           <div className="container">
             <Header />
-
             <Route exact path="/" component={withRouter(Landing)} />
             <Route exact path="/recipes" component={withRouter(Home)} />
 

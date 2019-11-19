@@ -9,72 +9,56 @@ import SearchBar from "containers/SearchBar";
 const LoggedOnHeader = () => {
   return (
     <div>
-      <nav class="main-header-large">
-        <a
-          href="JavaScript:void(0)"
-          id="hamburger_icon"
-          onClick={() => {
-            var x = document.getElementById("nav-links");
-            if (x.style.display === "block") {
-              x.style.display = "none";
-            } else {
-              x.style.display = "block";
-            }
-          }}
-        >
-          <div class="hamburger_line"></div>
-          <div class="hamburger_line"></div>
-          <div class="hamburger_line"></div>
+      <div class="header-large">
+        <a href="/recipes" id="header-logo">
+          <h3>Fridge List</h3>
         </a>
+
+        <SearchBar />
+
+        <a href="/recipes" className="header-button">
+          <p>Recipes</p>
+        </a>
+
+        <NavLink
+          to="/recipe/new"
+          activeClassName="active"
+          className="header-button"
+        >
+          <p>Add Recipe</p>
+        </NavLink>
+
+        <a href="/api/logout/" className="header-button" id="google-login">
+          <p>Logout</p>
+        </a>
+      </div>
+
+      <div class="header-medium">
+        <div>
+          <a
+            href="JavaScript:void(0)"
+            id="hamburger_icon"
+            onClick={() => {
+              var x = document.getElementById("nav-links-medium");
+              if (x.style.display === "block") {
+                x.style.display = "none";
+              } else {
+                x.style.display = "block";
+              }
+            }}
+          >
+            <div class="hamburger_line"></div>
+            <div class="hamburger_line"></div>
+            <div class="hamburger_line"></div>
+          </a>
+        </div>
 
         <a href="/recipes" id="header-logo">
           <h3>Fridge List</h3>
         </a>
 
-        <div id="nav-links">
-          <a href="/" className="header-button">
-            <p>Home</p>
-          </a>
-
-          <a href="/recipes" className="header-button">
-            <p>My Recipes</p>
-          </a>
-
-          <NavLink
-            to="/recipe/new"
-            activeClassName="active"
-            className="header-button"
-          >
-            <p>Add Recipe</p>
-          </NavLink>
-        </div>
-
         <SearchBar />
-
-        <a href="/api/logout/" className="header-button" id="google-login">
-          <p>Logout</p>
-        </a>
-      </nav>
-
-      <nav class="main-header-medium">
-        <a
-          href="JavaScript:void(0)"
-          id="hamburger_icon"
-          onClick={() => {
-            var x = document.getElementById("nav-links");
-            if (x.style.display === "block") {
-              x.style.display = "none";
-            } else {
-              x.style.display = "block";
-            }
-          }}
-        >
-          <div class="hamburger_line"></div>
-          <div class="hamburger_line"></div>
-          <div class="hamburger_line"></div>
-        </a>
-
-        <div id="nav-links">
+        <nav id="nav-links-medium">
           <a href="/recipes" className="header-button">
             <p>Home</p>
           </a>
@@ -90,13 +74,8 @@ const LoggedOnHeader = () => {
           <a href="/api/logout/" className="header-button" id="google-login">
             <p>Logout</p>
           </a>
-        </div>
-        <a href="/recipes" id="header-logo">
-          <h3>Fridge List</h3>
-        </a>
-
-        <SearchBar />
-      </nav>
+        </nav>
+      </div>
     </div>
   );
 };

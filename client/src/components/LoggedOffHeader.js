@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import SearchBar from "containers/SearchBar";
 
 //  Hyperlink tags used for refreshing the page in order to be directed into the oauth flow when clicking on the login button

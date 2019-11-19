@@ -5,8 +5,6 @@ import { bindActionCreators } from "redux";
 import { submitRecipe } from "../actions";
 import RecipeField from "./RecipeField";
 import InstructionsField from "./InstructionsField";
-import SearchBar from "./SearchBar";
-import FoodList from "./FoodList";
 
 // import Upload from "./Upload";
 
@@ -51,8 +49,6 @@ class RecipeForm extends Component {
             Submit
           </button>
         </form>
-        <SearchBar />
-        <FoodList />
       </div>
     );
   }
