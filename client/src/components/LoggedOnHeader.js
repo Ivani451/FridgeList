@@ -11,13 +11,18 @@ const LoggedOnHeader = () => {
     <div>
       <div class="header-large">
         <a href="/recipes" id="header-logo">
-          <h3>Fridge List</h3>
+          <h3>
+            Fridge <i className="fa fa-cutlery"></i> List
+          </h3>
         </a>
 
         <SearchBar />
 
         <a href="/recipes" className="header-button">
-          <p>Recipes</p>
+          <p>
+            {" "}
+            <i className="fa fa-book"></i> My Recipes
+          </p>
         </a>
 
         <NavLink
@@ -25,11 +30,15 @@ const LoggedOnHeader = () => {
           activeClassName="active"
           className="header-button"
         >
-          <p>Add Recipe</p>
+          <p>
+            <i className="fa fa-plus"></i> Add Recipe
+          </p>
         </NavLink>
 
         <a href="/api/logout/" className="header-button" id="google-login">
-          <p>Logout</p>
+          <p>
+            <i className="fa fa-user"></i> Logout
+          </p>
         </a>
       </div>
 

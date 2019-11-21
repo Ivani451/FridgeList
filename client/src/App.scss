@@ -157,9 +157,26 @@ body {
         width: 35px;
         height: 5px;
         background-color: white;
-        margin: 6px 0;
+        margin: 6px;
       }
     }
+  }
+
+  #search-bar {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+  }
+
+  #search-button {
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
   }
 
   .food-container {
