@@ -5,31 +5,57 @@ import SearchBar from "containers/SearchBar";
 const LoggedOffHeader = () => {
   return (
     <div>
-      <nav class="main-header-large">
+      <nav class="header-large">
         <a href="/Landing" id="header-logo">
-          <h2>Fridge List</h2>
+          <h2>
+            Fridge <i className="fa fa-cutlery"></i> List
+          </h2>
         </a>
 
         <SearchBar />
 
         <a href="/auth/google/" className="header-button" id="google-login">
-          <p>Login with Google</p>
+          <p>
+            {" "}
+            <i className="fa fa-google"></i> Sign in with Google
+          </p>
         </a>
       </nav>
 
-      <nav class="main-header-medium">
-        <div id="hamburger_icon">
+      <nav class="header-medium">
+        <a
+          href="JavaScript:void(0)"
+          id="hamburger_icon"
+          onClick={() => {
+            var x = document.getElementById("nav-links-medium");
+            if (x.style.display === "block") {
+              x.style.display = "none";
+            } else {
+              x.style.display = "block";
+            }
+          }}
+        >
           <div class="hamburger_line"></div>
           <div class="hamburger_line"></div>
           <div class="hamburger_line"></div>
-        </div>
+        </a>
 
         <a href="/recipes" id="header-logo">
           <h3>Fridge List</h3>
         </a>
 
+        <SearchBar />
+        <nav id="nav-links-medium">
+          <a href="/recipes" className="header-button">
+            <p>Home</p>
+          </a>
+        </nav>
+
         <a href="/auth/google/" className="header-button" id="google-login">
-          <p>Login with Google</p>
+          <p>
+            {" "}
+            <i className="fa fa-google"></i> Sign in with Google
+          </p>
         </a>
       </nav>
     </div>

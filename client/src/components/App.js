@@ -13,6 +13,7 @@ import FoodInfo from "containers/FoodInfo";
 import RecipeForm from "containers/RecipeForm";
 import Header from "./Header";
 import Landing from "./Landing";
+import SearchList from "./SearchList";
 import MyFoodInfo from "containers/MyFoodInfo";
 
 class App extends Component {
@@ -47,6 +48,12 @@ class App extends Component {
               exact
               path="/recipe/new"
               component={withRouter(RecipeForm)}
+            />
+
+            <Route
+              exact
+              path="/search-results"
+              component={withRouter(SearchList)}
             />
           </div>
         </Switch>

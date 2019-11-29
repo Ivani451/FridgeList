@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { fetchFood } from "../actions";
+import { withRouter } from "react-router-dom";
 
 class SearchBar extends Component {
   constructor(props) {
@@ -25,6 +26,9 @@ class SearchBar extends Component {
     event.preventDefault();
 
     this.props.fetchFood(this.state.term);
+    // after the user submits the form with the designated ingredients, the user is
+    // redirected to the '/search-results' URL
+    this.props.history.push("/search-results");
 
     // We set state to an empty string to clear the term when the search bar re-renders
     this.setState({ term: "" });
@@ -59,7 +63,20 @@ function mapDispatchToProps(dispatch) {
     use the action creator as a prop for the search bar
 
 */
-export default connect(
-  null,
+export default withRouter(
+  connect(
+    null,
+    mapDispatchToProps
+  )(SearchBar)
+);
+
+/* 
+  withRouter is used with Redux and has to be done in this specific order. The following is
+  incorrect:
+  
+connect(
+  mapStateToProps,
   mapDispatchToProps
-)(SearchBar);
+)(withRouter(App));
+
+*/
