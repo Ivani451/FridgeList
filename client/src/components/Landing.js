@@ -1,13 +1,14 @@
 import React from "react";
-import FoodList from "containers/FoodList";
 
 const Landing = () => {
   return (
     <div id="landing-page">
-      <FoodList />
-      <h2 id="landing-info">
-        Search for your Favorite Recipes <br /> &amp; Discover New Food
-      </h2>
+      <div id="banner">
+        <h2 id="landing-info">
+          Search for your Favorite Recipes <br /> &amp; Discover New Food
+        </h2>
+      </div>
+
       <ul>
         <div id="groceries-row">
           <div id="groceries">

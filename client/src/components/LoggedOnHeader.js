@@ -10,7 +10,7 @@ const LoggedOnHeader = () => {
   return (
     <div>
       <div class="header-large">
-        <a href="/recipes" id="header-logo">
+        <a href="/" id="header-logo">
           <h3>
             Fridge <i className="fa fa-cutlery"></i> List
           </h3>
@@ -62,7 +62,7 @@ const LoggedOnHeader = () => {
           </a>
         </div>
 
-        <a href="/recipes" id="header-logo">
+        <a href="/" id="header-logo">
           <h3>Fridge List</h3>
         </a>
 
