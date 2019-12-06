@@ -17,7 +17,8 @@ const LoggedOffHeader = () => {
         <a href="/auth/google/" className="header-button" id="google-login">
           <p>
             {" "}
-            <i className="fa fa-google"></i> Sign in with Google
+            <i id="google-logo" className="fa fa-google"></i> Sign in with
+            Google
           </p>
         </a>
       </nav>
@@ -41,7 +42,9 @@ const LoggedOffHeader = () => {
         </a>
 
         <a href="/" id="header-logo">
-          <h3>Fridge List</h3>
+          <h3>
+            F <i id="cutlery-logo" className="fa fa-cutlery"></i> L
+          </h3>
         </a>
 
         <SearchBar />
@@ -54,7 +57,7 @@ const LoggedOffHeader = () => {
         <a href="/auth/google/" className="header-button" id="google-login">
           <p>
             {" "}
-            <i className="fa fa-google"></i> Sign in with Google
+            <i id="google-logo" className="fa fa-google"></i> Login
           </p>
         </a>
       </nav>
