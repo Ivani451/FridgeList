@@ -14,13 +14,21 @@ const LoggedOffHeader = () => {
 
         <SearchBar />
 
-        <a href="/auth/google/" className="header-button" id="google-login">
-          <p>
-            {" "}
-            <i id="google-logo" className="fa fa-google"></i> Sign in with
-            Google
-          </p>
-        </a>
+        <button class="google-btn-over">
+          <a href="/auth/google/" id="google-link">
+            <div class="google-btn">
+              <div class="google-icon-wrapper">
+                <img
+                  class="google-icon"
+                  src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                />
+              </div>
+              <p class="btn-text">
+                <b>Sign in with Google</b>
+              </p>
+            </div>
+          </a>
+        </button>
       </nav>
 
       <nav class="header-medium">

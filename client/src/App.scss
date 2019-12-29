@@ -101,6 +101,11 @@ body {
       text-decoration: none;
     }
 
+    #google-link {
+      padding: 1em;
+      margin-left: auto;
+    }
+
     #hamburger_icon {
       margin: 1em 0 1em 1em;
       z-index: 1;
@@ -110,23 +115,6 @@ body {
         height: 5px;
         background-color: white;
         margin: 6px 0;
-      }
-    }
-
-    #google-login {
-      background-color: rgb(226, 226, 226);
-      margin-left: auto;
-      font-family: "Roboto";
-
-      p {
-        font-weight: bold;
-        color: black;
-        font-weight: bold;
-      }
-
-      #google-logo {
-        color: #db4437;
-        font-size: 1.35em;
       }
     }
   }
@@ -195,7 +183,6 @@ body {
 
     #search-bar {
       padding: 6px;
-      margin-top: 8px;
       font-size: 17px;
       border: none;
     }
@@ -349,5 +336,59 @@ body {
     margin: 0;
     display: flex;
     flex-direction: row;
+  }
+}
+
+// CSS below for Google login button
+
+$white: #ffffff;
+$google-blue: #4285f4;
+$button-active-blue: #1669f2;
+$grey: #666666;
+
+/*
+  google-btn-over is used for formatting the actual sign-in button. Without it, the 
+  entire HTML element can be clicked and used to sign in, which takes up more space than
+  just the sign-in button
+*/
+.google-btn-over {
+  background-color: rgb(32, 32, 32);
+  margin-left: auto;
+  border: none;
+  outline: none;
+
+  .google-btn {
+    width: 184px;
+    height: 42px;
+    background-color: $white;
+    border-radius: 2px;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+
+    .google-icon-wrapper {
+      position: absolute;
+      margin-top: 1px;
+      margin-left: 1px;
+      width: 40px;
+      height: 40px;
+      border-radius: 2px;
+      background-color: $white;
+    }
+    .google-icon {
+      position: absolute;
+      margin-top: 11px;
+      width: 18px;
+      height: 18px;
+    }
+    .btn-text {
+      float: right;
+      margin: 11px 11px 0 0;
+      color: $grey;
+      font-size: 14px;
+      letter-spacing: 0.2px;
+      font-family: "Roboto";
+    }
+    &:hover {
+      box-shadow: 0 0 6px $google-blue;
+    }
   }
 }
