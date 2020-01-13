@@ -6,7 +6,7 @@ const LoggedOffHeader = () => {
   return (
     <div>
       <nav class="header-large">
-        <a href="/" id="header-logo">
+        <a href="/" id="header-logo-large">
           <h2>
             Fridge <i className="fa fa-cutlery"></i> List
           </h2>
@@ -48,26 +48,24 @@ const LoggedOffHeader = () => {
           <div class="hamburger_line"></div>
           <div class="hamburger_line"></div>
         </a>
-
-        <a href="/" id="header-logo">
+        <a href="/" id="header-logo-medium">
           <h3>
             F <i id="cutlery-logo" className="fa fa-cutlery"></i> L
           </h3>
         </a>
-
         <SearchBar />
         <nav id="nav-links-medium">
           <a href="/recipes" className="header-button">
             <p>Home</p>
           </a>
-        </nav>
-
-        <a href="/auth/google/" className="header-button" id="google-login">
-          <p>
+          <a href="/auth/google/" className="header-button">
             {" "}
-            <i id="google-logo" className="fa fa-google"></i> Login
-          </p>
-        </a>
+            <p>
+              {" "}
+              <i id="google-logo" className="fa fa-google"></i> Login
+            </p>
+          </a>
+        </nav>
       </nav>
     </div>
   );
