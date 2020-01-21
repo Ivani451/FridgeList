@@ -32,40 +32,37 @@ const LoggedOffHeader = () => {
       </nav>
 
       <nav class="header-medium">
-        <a
-          href="JavaScript:void(0)"
-          id="hamburger_icon"
-          onClick={() => {
-            var x = document.getElementById("nav-links-medium");
-            if (x.style.display === "block") {
-              x.style.display = "none";
-            } else {
-              x.style.display = "block";
-            }
-          }}
-        >
-          <div class="hamburger_line"></div>
-          <div class="hamburger_line"></div>
-          <div class="hamburger_line"></div>
-        </a>
-        <a href="/" id="header-logo-medium">
-          <h3>
-            F <i id="cutlery-logo" className="fa fa-cutlery"></i> L
-          </h3>
-        </a>
-        <SearchBar />
-        <nav id="nav-links-medium">
-          <a href="/recipes" className="header-button">
-            <p>Home</p>
+        <header class="header">
+          <a href="/" id="header-logo-medium" class="logo">
+            <h3>F L</h3>
           </a>
-          <a href="/auth/google/" className="header-button">
-            {" "}
-            <p>
-              {" "}
-              <i id="google-logo" className="fa fa-google"></i> Login
-            </p>
-          </a>
-        </nav>
+
+          <input class="menu-btn" type="checkbox" id="menu-btn" />
+
+          <label class="menu-icon" for="menu-btn">
+            <span class="navicon"></span>
+          </label>
+
+          <ul class="menu">
+            <li>
+              <a href="/recipes" className="header-button">
+                <p>Home</p>
+              </a>
+            </li>
+            <li>
+              <a href="/auth/google/" className="header-button">
+                {" "}
+                <p>
+                  {" "}
+                  <i id="google-logo" className="fa fa-google"></i> Login
+                </p>
+              </a>
+            </li>
+            <li>
+              <SearchBar />
+            </li>
+          </ul>
+        </header>
       </nav>
     </div>
   );
