@@ -85,7 +85,6 @@ body {
 
   .header-large {
     background-color: black;
-    color: white;
     font-family: Verdana, sans-serif;
 
     #header-logo-large {
@@ -96,6 +95,11 @@ body {
       font-family: Brush Script MT;
       font-size: 1.4em;
       text-decoration: none;
+    }
+
+    .header-button {
+      color: white;
+      margin: 1em;
     }
   }
 

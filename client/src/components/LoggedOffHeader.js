@@ -45,7 +45,7 @@ const LoggedOffHeader = () => {
 
           <ul class="menu">
             <li>
-              <a href="/recipes" className="header-button">
+              <a href="/" className="header-button">
                 <p>Home</p>
               </a>
             </li>

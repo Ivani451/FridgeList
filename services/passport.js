@@ -16,6 +16,7 @@ let pool = new pg.Pool({
 
 // passport serialize and deserialize
 passport.serializeUser(function(user, done) {
+  console.log(user);
   done(null, user);
 });
 
@@ -30,6 +31,7 @@ passport.use(
     {
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
+      // the route the user is sent to after they grant Google permission
       callbackURL: "/auth/google/callback",
       proxy: true
     },
@@ -39,6 +41,7 @@ passport.use(
           return console.error("pool client fetch error", poolErr);
         }
 
+        // Here we attempt to find the user in our database using their Google ID
         poolClient.query(
           "SELECT * FROM users WHERE googleid = $1",
           [profile.id],
@@ -53,6 +56,10 @@ passport.use(
                 profile.photos[0].value
               );
             } else {
+              /*
+                If the user was not found in our database, then a new user is created and saved. The user's Google ID, 
+                name, and profile picture are saved for future reference. 
+              */
               poolClient.query(
                 "INSERT INTO users(googleid, first_name, profile_picture) VALUES($1, $2, $3) RETURNING *",
                 [profile.id, profile.name.givenName, profile.photos[0].value],

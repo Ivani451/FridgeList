@@ -1,5 +1,7 @@
 const express = require("express");
 const cookieSession = require("cookie-session");
+// We are not exporting anything out of passport.js, we just want to run it and so we require
+// the passport file without assigning it to a variable
 require("./services/passport");
 const bodyParser = require("body-parser");
 const keys = require("./config/keys");

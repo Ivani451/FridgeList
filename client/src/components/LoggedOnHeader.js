@@ -10,7 +10,7 @@ const LoggedOnHeader = () => {
   return (
     <div>
       <div class="header-large">
-        <a href="/" id="header-logo-large">
+        <a href="/recipes" id="header-logo-large">
           <h3>
             Fridge <i className="fa fa-cutlery"></i> List
           </h3>
@@ -42,55 +42,50 @@ const LoggedOnHeader = () => {
         </a>
       </div>
 
-      <div class="header-medium">
-        <div>
-          <a
-            href="JavaScript:void(0)"
-            id="hamburger_icon"
-            onClick={() => {
-              var x = document.getElementById("nav-links-medium");
-              if (x.style.display === "block") {
-                x.style.display = "none";
-              } else {
-                x.style.display = "block";
-              }
-            }}
-          >
-            <div class="hamburger_line"></div>
-            <div class="hamburger_line"></div>
-            <div class="hamburger_line"></div>
-          </a>
-        </div>
-
-        <a href="/" id="header-logo-medium">
-          <h3>Fridge List</h3>
-        </a>
-
-        <SearchBar />
-        <nav id="nav-links-medium">
-          <a href="/recipes" className="header-button">
-            <p>Home</p>
+      <nav class="header-medium">
+        <header class="header">
+          <a href="/" id="header-logo-medium" class="logo">
+            <h3>F L</h3>
           </a>
 
-          <NavLink
-            to="/recipe/new"
-            activeClassName="active"
-            className="header-button"
-          >
-            <p>Add Recipe</p>
-          </NavLink>
+          <input class="menu-btn" type="checkbox" id="menu-btn" />
 
-          <a href="/api/logout/" className="header-button" id="google-login">
-            <p>Logout</p>
-          </a>
-        </nav>
-      </div>
+          <label class="menu-icon" for="menu-btn">
+            <span class="navicon"></span>
+          </label>
+
+          <ul class="menu">
+            <li>
+              <a href="/" className="header-button">
+                <p>Home</p>
+              </a>
+            </li>
+            <li>
+              <NavLink
+                to="/recipe/new"
+                activeClassName="active"
+                className="header-button"
+              >
+                <p>Add Recipe</p>
+              </NavLink>
+            </li>
+            <li>
+              <a
+                href="/api/logout/"
+                className="header-button"
+                id="google-login"
+              >
+                <p>Logout</p>
+              </a>
+            </li>
+            <li>
+              <SearchBar />
+            </li>
+          </ul>
+        </header>
+      </nav>
     </div>
   );
 };
 
-/*
-  onClick function on the hamburger icon toggles navigation list style from "none" to "block," which displays
-  the hidden navigation bar.
-*/
 export default LoggedOnHeader;
