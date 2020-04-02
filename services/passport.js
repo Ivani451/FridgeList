@@ -6,12 +6,12 @@ const keys = require("../config/keys");
 
 // database configuration
 let pool = new pg.Pool({
-  user: process.env.DB_USER,
-  database: process.env.DB_DATABASE,
-  password: process.env.DB_PASSWORD,
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  max: process.env.DB_MAX
+  user: keys.DB_USER,
+  database: keys.DB_DATABASE,
+  password: keys.DB_PASSWORD,
+  host: keys.DB_HOST,
+  port: keys.DB_PORT,
+  max: keys.DB_MAX
 });
 
 // passport serialize and deserialize
