@@ -37,7 +37,7 @@ class MyRecipe extends Component {
               onClick={() => this.props.fetchMyRecipeInfo(recipes.id)}
             >
               <h3>{recipes.title}</h3>
-              <p>By {recipes.author}</p>
+              <p>{recipes.author}</p>
               <hr />
             </div>
           </Link>

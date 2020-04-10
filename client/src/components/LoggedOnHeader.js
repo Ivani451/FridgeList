@@ -9,7 +9,7 @@ import SearchBar from "containers/SearchBar";
 const LoggedOnHeader = () => {
   return (
     <div>
-      <div class="header-large">
+      <div className="header-large">
         <a href="/recipes" id="header-logo-large">
           <h3>
             Fridge <i className="fa fa-cutlery"></i> List
@@ -42,19 +42,19 @@ const LoggedOnHeader = () => {
         </a>
       </div>
 
-      <nav class="header-medium">
-        <header class="header">
-          <a href="/" id="header-logo-medium" class="logo">
+      <nav className="header-medium">
+        <header className="header">
+          <a href="/" id="header-logo-medium" className="logo">
             <h3>F L</h3>
           </a>
 
-          <input class="menu-btn" type="checkbox" id="menu-btn" />
+          <input className="menu-btn" type="checkbox" id="menu-btn" />
 
-          <label class="menu-icon" for="menu-btn">
-            <span class="navicon"></span>
+          <label className="menu-icon" htmlFor="menu-btn">
+            <span className="navicon"></span>
           </label>
 
-          <ul class="menu">
+          <ul className="menu">
             <li>
               <a href="/" className="header-button">
                 <p>Home</p>

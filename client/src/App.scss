@@ -91,7 +91,7 @@ body {
       color: white;
       border: 3px solid white;
       padding: 0em 1em 0em 1em;
-      margin-right: 4em;
+      margin: 0.3em 4em 0.3em 0.3em;
       font-family: Brush Script MT;
       font-size: 1.4em;
       text-decoration: none;
@@ -103,17 +103,23 @@ body {
     }
   }
 
-  #searchBar {
+  .searchBar {
     width: 100%;
+    text-align: center;
+    border: none;
 
-    #search-bar {
+    input {
+      width: 60%;
+    }
+
+    .search-bar {
       padding: 6px;
       font-size: 17px;
       border: none;
     }
   }
 
-  #search-button {
+  .search-button {
     padding: 6px 10px;
     margin-top: 8px;
     margin-right: 16px;
@@ -142,15 +148,6 @@ body {
       background-color: rgba(0, 0, 0, 0.7);
       color: white;
       padding: 2%;
-    }
-  }
-
-  #searchBar {
-    text-align: center;
-    border: none;
-
-    input {
-      width: 60%;
     }
   }
 
@@ -452,6 +449,7 @@ a {
     font-size: 1.2em;
     text-decoration: none;
     text-align: center;
+    margin: 0.3em 4em 0.3em 0.3em;
   }
 
   #hamburger_icon {
