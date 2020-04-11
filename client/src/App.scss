@@ -83,6 +83,111 @@ body {
     }
   }
 
+  // The following CSS pertains to the header ----------------------------------------------------
+
+  .header {
+    background-color: black;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      overflow: hidden;
+      background-color: black;
+      align-content: center;
+    }
+
+    li a {
+      display: block;
+      padding: 10px 20px;
+
+      border-right: 1px solid #f4f4f4;
+      text-decoration: none;
+      color: white;
+    }
+
+    .logo {
+      display: block;
+      float: left;
+      font-size: 2em;
+      padding: 10px 20px;
+      text-decoration: none;
+    }
+
+    .menu {
+      clear: both;
+      max-height: 0;
+      transition: max-height 0.2s ease-out;
+    }
+
+    .menu-icon {
+      cursor: pointer;
+      display: inline-block;
+      float: right;
+      padding: 28px 20px;
+      position: relative;
+      user-select: none;
+    }
+
+    .menu-icon .navicon {
+      background: white;
+      display: block;
+      height: 2px;
+      position: relative;
+      transition: background 0.2s ease-out;
+      width: 20px;
+    }
+
+    .menu-icon .navicon:before,
+    .menu-icon .navicon:after {
+      background: white;
+      content: "";
+      display: block;
+      height: 100%;
+      position: absolute;
+      transition: all 0.2s ease-out;
+      width: 100%;
+    }
+
+    .menu-icon .navicon:before {
+      top: 5px;
+    }
+
+    .menu-icon .navicon:after {
+      top: -5px;
+    }
+
+    .menu-btn {
+      display: none;
+    }
+
+    .menu-btn:checked ~ .menu {
+      max-height: 500px;
+    }
+
+    .menu-btn:checked ~ .menu-icon .navicon {
+      background: transparent;
+    }
+
+    .menu-btn:checked ~ .menu-icon .navicon:before {
+      transform: rotate(-45deg);
+    }
+
+    .menu-btn:checked ~ .menu-icon .navicon:after {
+      transform: rotate(45deg);
+    }
+
+    .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+    .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+      top: 0;
+    }
+  }
+
+  // CSS for the large header
   .header-large {
     background-color: black;
     font-family: Verdana, sans-serif;
@@ -100,6 +205,39 @@ body {
     .header-button {
       color: white;
       margin: 1em;
+    }
+  }
+
+  // CSS for the medium header
+  .header-medium {
+    background-color: rgb(32, 32, 32);
+    color: black;
+    font-family: Verdana, sans-serif;
+
+    .header-button:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    #header-logo-medium {
+      color: white;
+      border: 3px solid white;
+      padding: 0em 1em 0em 1em;
+      font-family: Brush Script MT;
+      font-size: 1.2em;
+      text-decoration: none;
+      text-align: center;
+      margin: 0.3em 4em 0.3em 0.3em;
+    }
+
+    #hamburger_icon {
+      margin: 1em;
+      .hamburger_line {
+        width: 35px;
+        height: 5px;
+        background-color: black;
+        margin: 6px;
+      }
     }
   }
 
@@ -127,6 +265,12 @@ body {
     font-size: 17px;
     border: none;
     cursor: pointer;
+  }
+
+  // CSS relating to recipe forms, fields, and containers ---------------------------------------------------------------------------------
+
+  #field {
+    margin-top: 7em;
   }
 
   .food-container {
@@ -235,7 +379,7 @@ body {
   }
 }
 
-// code below is for responsive nav bar based on screen size
+// code below is for responsive nav bar based on screen size ----------------------------------
 
 @media screen and (min-width: 801px) {
   .header-large {
@@ -265,7 +409,7 @@ body {
   }
 }
 
-// CSS below for Google login button
+// CSS below for Google login button -----------------------------------------------------------
 
 $white: #ffffff;
 $google-blue: #4285f4;
@@ -325,140 +469,4 @@ body {
 
 a {
   color: #000;
-}
-
-/* header */
-
-.header {
-  background-color: black;
-  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
-  position: fixed;
-  width: 100%;
-  z-index: 3;
-
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    overflow: hidden;
-    background-color: black;
-    align-content: center;
-  }
-
-  li a {
-    display: block;
-    padding: 10px 20px;
-
-    border-right: 1px solid #f4f4f4;
-    text-decoration: none;
-    color: white;
-  }
-
-  .logo {
-    display: block;
-    float: left;
-    font-size: 2em;
-    padding: 10px 20px;
-    text-decoration: none;
-  }
-
-  .menu {
-    clear: both;
-    max-height: 0;
-    transition: max-height 0.2s ease-out;
-  }
-
-  .menu-icon {
-    cursor: pointer;
-    display: inline-block;
-    float: right;
-    padding: 28px 20px;
-    position: relative;
-    user-select: none;
-  }
-
-  .menu-icon .navicon {
-    background: white;
-    display: block;
-    height: 2px;
-    position: relative;
-    transition: background 0.2s ease-out;
-    width: 20px;
-  }
-
-  .menu-icon .navicon:before,
-  .menu-icon .navicon:after {
-    background: white;
-    content: "";
-    display: block;
-    height: 100%;
-    position: absolute;
-    transition: all 0.2s ease-out;
-    width: 100%;
-  }
-
-  .menu-icon .navicon:before {
-    top: 5px;
-  }
-
-  .menu-icon .navicon:after {
-    top: -5px;
-  }
-
-  .menu-btn {
-    display: none;
-  }
-
-  .menu-btn:checked ~ .menu {
-    max-height: 240px;
-  }
-
-  .menu-btn:checked ~ .menu-icon .navicon {
-    background: transparent;
-  }
-
-  .menu-btn:checked ~ .menu-icon .navicon:before {
-    transform: rotate(-45deg);
-  }
-
-  .menu-btn:checked ~ .menu-icon .navicon:after {
-    transform: rotate(45deg);
-  }
-
-  .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-  .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-    top: 0;
-  }
-}
-
-.header-medium {
-  background-color: rgb(32, 32, 32);
-  color: black;
-  font-family: Verdana, sans-serif;
-
-  .header-button:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-  #header-logo-medium {
-    color: white;
-    border: 3px solid white;
-    padding: 0em 1em 0em 1em;
-    font-family: Brush Script MT;
-    font-size: 1.2em;
-    text-decoration: none;
-    text-align: center;
-    margin: 0.3em 4em 0.3em 0.3em;
-  }
-
-  #hamburger_icon {
-    margin: 1em;
-    .hamburger_line {
-      width: 35px;
-      height: 5px;
-      background-color: black;
-      margin: 6px;
-    }
-  }
 }

@@ -7,6 +7,7 @@ import { bindActionCreators } from "redux";
 class MyRecipe extends Component {
   renderRecipes() {
     return this.props.recipes.map(recipes => {
+      console.log(recipes);
       /*
         When pressed, the delete button will ask the user to confirm their decision. 
         If deletion is accepted, the recipe will be deleted from the users homepage and the page will reload to show

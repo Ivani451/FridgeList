@@ -61,6 +61,11 @@ const LoggedOnHeader = () => {
               </a>
             </li>
             <li>
+              <a href="/recipes" className="header-button">
+                <p>Recipes</p>
+              </a>
+            </li>
+            <li>
               <NavLink
                 to="/recipe/new"
                 activeClassName="active"

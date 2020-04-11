@@ -36,7 +36,7 @@ class RecipeForm extends Component {
 
   render() {
     return (
-      <div>
+      <div id="field">
         <form
           onSubmit={this.props.handleSubmit(values =>
             this.props.submitRecipe(values)
