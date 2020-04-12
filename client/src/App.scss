@@ -24,7 +24,7 @@ body {
     }
 
     // fix for image not displaying in "img"
-    #groceries-row {
+    .groceries-row {
       display: flex;
       flex-direction: row;
       margin-top: 0.8em;
@@ -403,9 +403,42 @@ body {
   }
 
   .header-medium {
-    margin: 0;
+    margin-bottom: 10em;
     display: flex;
     flex-direction: row;
+  }
+
+  #banner {
+    margin-top: -5em;
+    width: 200px;
+
+    #landing-info {
+      opacity: 0;
+    }
+  }
+
+  .groceries-row {
+    position: relative;
+    top: -28em;
+    color: white;
+    font-size: 1em;
+    -webkit-text-stroke-width: 0.2px;
+    -webkit-text-stroke-color: black;
+    background-color: black;
+    padding: 0.5em;
+    margin: 1em 1em 1em -1em;
+    opacity: 90%;
+
+    p {
+      margin-right: 1em;
+    }
+
+    #groceries,
+    #steak,
+    #stew {
+      width: 50%;
+      height: 50%;
+    }
   }
 }
 

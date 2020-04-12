@@ -10,21 +10,21 @@ const Landing = () => {
       </div>
 
       <ul>
-        <div id="groceries-row">
+        <div className="groceries-row">
           <div id="groceries">
             <p>hidden text</p>
           </div>
           <li>Find new recipes using the ingredients you have.</li>
         </div>
 
-        <div id="groceries-row">
+        <div className="groceries-row">
           <div id="steak">
             <p>hidden text</p>
           </div>
           <li>Filter recipes to see if they're keto friendly!</li>
         </div>
 
-        <div id="groceries-row">
+        <div className="groceries-row">
           <div id="stew">
             <p>hidden text</p>
           </div>
