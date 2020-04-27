@@ -18,7 +18,7 @@ const LoggedOnHeader = () => {
 
         <SearchBar />
 
-        <a href="/recipes" className="header-button">
+        <a href="/recipes" className="header-button" id="my-recipes-button">
           <p>
             {" "}
             <i className="fa fa-book"></i> My Recipes

@@ -9,7 +9,7 @@ const Landing = () => {
         </h2>
       </div>
 
-      <ul>
+      <ul id="groceries-row-list">
         <div className="groceries-row">
           <div id="groceries">
             <p>hidden text</p>

@@ -17,20 +17,27 @@ export const fetchUser = () => async dispatch => {
 };
 
 export const fetchFood = (...food) => async dispatch => {
+  // Here we take the users inputs(ingredients) and encode them into a usable string for the URL
+  let ingredients = encodeURIComponent(food);
   // The call to our Food API is set up and triggered
   const config = {
+    method: "GET",
+    url:
+      "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients",
     headers: {
-      "X-Mashape-Key": "uyQXZtNhmjmshd8C2cUfXQnqoYuRp1b2kgKjsnK6k86LQg22rs",
-      "X-Mashape-Host": "spoonacular-recipe-food-nutrition-v1.p.mashape.com"
+      "content-type": "application/octet-stream",
+      "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+      "x-rapidapi-key": "KhV20lncoSmshTs0jbXgjj2SOXoxp1YQnjpjsnUz0hrHV56mQI"
+    },
+    params: {
+      number: "10",
+      ranking: "1",
+      ignorePantry: "false",
+      ingredients: `${ingredients}`
     }
   };
 
-  // Here we take the users inputs(ingredients) and encode them into a usable string for the URL
-
-  let ingredients = encodeURIComponent(food);
-  let URL = `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?ingredients=${ingredients}&number=10&ranking=1`;
-
-  const res = await axios.get(URL, config);
+  const res = await axios(config);
   dispatch({ type: FETCH_FOOD, payload: res });
 };
 

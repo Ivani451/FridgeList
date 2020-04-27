@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 class MyFoodInfo extends Component {
   render() {
     let recipe = this.props.recipes;
-    console.log(recipe);
+    console.log(recipe.ingredients);
 
     // the data is taken from our recipes reducer and displayed to the user
 

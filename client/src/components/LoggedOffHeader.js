@@ -5,7 +5,7 @@ import SearchBar from "containers/SearchBar";
 const LoggedOffHeader = () => {
   return (
     <div>
-      <nav class="header-large">
+      <nav className="header-large">
         <a href="/" id="header-logo-large">
           <h2>
             Fridge <i className="fa fa-cutlery"></i> List
@@ -14,17 +14,17 @@ const LoggedOffHeader = () => {
 
         <SearchBar />
 
-        <button class="google-btn-over">
+        <button className="google-btn-over">
           <a href="/auth/google/" id="google-link">
-            <div class="google-btn">
-              <div class="google-icon-wrapper">
+            <div className="google-btn">
+              <div className="google-icon-wrapper">
                 <img
                   alt="Google"
-                  class="google-icon"
+                  className="google-icon"
                   src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
                 />
               </div>
-              <p class="btn-text">
+              <p className="btn-text">
                 <b>Sign in with Google</b>
               </p>
             </div>
@@ -32,19 +32,19 @@ const LoggedOffHeader = () => {
         </button>
       </nav>
 
-      <nav class="header-medium">
-        <header class="header">
-          <a href="/" id="header-logo-medium" class="logo">
+      <nav className="header-medium">
+        <header className="header">
+          <a href="/" id="header-logo-medium" className="logo">
             <h3>F L</h3>
           </a>
 
-          <input class="menu-btn" type="checkbox" id="menu-btn" />
+          <input className="menu-btn" type="checkbox" id="menu-btn" />
 
-          <label class="menu-icon" for="menu-btn">
-            <span class="navicon"></span>
+          <label className="menu-icon" htmlFor="menu-btn">
+            <span className="navicon"></span>
           </label>
 
-          <ul class="menu">
+          <ul className="menu">
             <li>
               <a href="/" className="header-button">
                 <p>Home</p>
