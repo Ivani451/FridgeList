@@ -48,15 +48,16 @@ export const fetchInfo = foodId => async dispatch => {
   // The call to our Food API is set up and triggered
 
   const config = {
+    method: "GET",
+    url: `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${foodId}/information`,
     headers: {
-      "X-Mashape-Key": "uyQXZtNhmjmshd8C2cUfXQnqoYuRp1b2kgKjsnK6k86LQg22rs",
-      "X-Mashape-Host": "spoonacular-recipe-food-nutrition-v1.p.mashape.com"
+      "content-type": "application/octet-stream",
+      "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+      "x-rapidapi-key": "KhV20lncoSmshTs0jbXgjj2SOXoxp1YQnjpjsnUz0hrHV56mQI"
     }
   };
 
-  let URL = `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/${foodId}/information`;
-
-  const res = await axios.get(URL, config);
+  const res = await axios(config);
   dispatch({ type: FETCH_INFO, payload: res });
 };
 
