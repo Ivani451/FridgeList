@@ -21,7 +21,7 @@ class FoodInfo extends Component {
 
         <div>
           <span className="recipe-main">Ingredients:</span>
-          {food.extendedIngredients.map(item => {
+          {food.extendedIngredients.map((item) => {
             return <li>{item.name}</li>;
           })}
         </div>
@@ -63,7 +63,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps({ info }) {
   return {
-    info
+    info,
   };
 }
 

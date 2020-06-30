@@ -2,16 +2,16 @@ const pg = require("pg");
 require("dotenv").config();
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
-const keys = require("../config/keys");
+// const keys = require("../config/keys");
 
 // database configuration
 let pool = new pg.Pool({
-  user: keys.DB_USER,
-  database: keys.DB_DATABASE,
-  password: keys.DB_PASSWORD,
-  host: keys.DB_HOST,
-  port: keys.DB_PORT,
-  max: keys.DB_MAX
+  user: "aws_postgres",
+  database: "aws_postgres",
+  password: "haze2tha451",
+  host: "mydbinstance.cwjnu9ovvpww.us-east-2.rds.amazonaws.com",
+  port: "5432",
+  max: "10"
 });
 
 // passport serialize and deserialize
@@ -29,8 +29,9 @@ passport.deserializeUser(function(user, done) {
 passport.use(
   new GoogleStrategy(
     {
-      clientID: keys.googleClientID,
-      clientSecret: keys.googleClientSecret,
+      clientID:
+        "642964733374-s4dd18toremi53j8n6frp6j7en5hvd73.apps.googleusercontent.com",
+      clientSecret: "bruMP5hXmx_2vf_onJEGbZKO",
       // the route the user is sent to after they grant Google permission
       callbackURL: "/auth/google/callback",
       proxy: true

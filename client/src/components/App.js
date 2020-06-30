@@ -21,11 +21,13 @@ class App extends Component {
     this.props.fetchUser();
   }
 
+  // the React.Fragment element replaced a div. The div was replalced because you get an error
+  // if you put a div inside a Switch element
   render() {
     return (
       <Router>
         <Switch>
-          <div className="container">
+          <React.Fragment>
             <Header />
             <Route exact path="/" component={withRouter(Landing)} />
             <Route exact path="/recipes" component={withRouter(Home)} />
@@ -55,7 +57,7 @@ class App extends Component {
               path="/search-results"
               component={withRouter(SearchList)}
             />
-          </div>
+          </React.Fragment>
         </Switch>
       </Router>
     );
