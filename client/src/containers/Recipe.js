@@ -11,7 +11,7 @@ class Recipe extends Component {
   renderFood(food) {
     return (
       <div className="food-container">
-        {food.map(recipe => {
+        {food.map((recipe) => {
           return (
             <div>
               <Link to={"/recipe/" + recipe.id}>
@@ -19,7 +19,7 @@ class Recipe extends Component {
                   className="indiv-recipe"
                   key={recipe.id}
                   style={{
-                    backgroundImage: "url(" + recipe.image + ")"
+                    backgroundImage: "url(" + recipe.image + ")",
                   }}
                   onClick={() => this.props.fetchInfo(recipe.id)}
                 >

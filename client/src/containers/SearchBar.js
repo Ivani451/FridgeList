@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { fetchFood } from "../actions";
 import { withRouter } from "react-router-dom";
 
 class SearchBar extends Component {
@@ -21,15 +18,13 @@ class SearchBar extends Component {
     this.setState({ term: event.target.value });
   }
 
-  // Prevents the page from refreshing after the "submit" button is clicked
-  onFormSubmit(event) {
-    event.preventDefault();
+  onFormSubmit() {
+    // the string of ingredients (Example: "apple, orange, cherry")
+    // is altered to remove the commas in order to make it more readable
+    // in the URL
+    let ingredientsURL = this.state.term.replace(/,/g, "");
 
-    this.props.fetchFood(this.state.term);
-    // after the user submits the form with the designated ingredients, the user is
-    // redirected to the '/search-results' URL
-    this.props.history.push("/search-results");
-
+    this.props.history.push(`/search-results/${ingredientsURL}`);
     // We set state to an empty string to clear the term when the search bar re-renders
     this.setState({ term: "" });
   }
@@ -46,7 +41,7 @@ class SearchBar extends Component {
             onChange={this.onInputChange}
           />
           <button className="search-button" type="submit">
-            <i className="fa fa-search"></i>
+            <i className="fa fa-search" />
           </button>
         </form>
       </div>
@@ -54,29 +49,4 @@ class SearchBar extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchFood }, dispatch);
-}
-
-/* 
-    Here we connect our action creator "fetchFood" to the search bar so we can
-    use the action creator as a prop for the search bar
-
-*/
-export default withRouter(
-  connect(
-    null,
-    mapDispatchToProps
-  )(SearchBar)
-);
-
-/* 
-  withRouter is used with Redux and has to be done in this specific order. The following is
-  incorrect:
-  
-connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withRouter(App));
-
-*/
+export default withRouter(SearchBar);

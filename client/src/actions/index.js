@@ -17,9 +17,10 @@ export const fetchUser = () => async (dispatch) => {
 };
 
 export const fetchFood = (...food) => async (dispatch) => {
-  // Here we take the users inputs(ingredients) and encode them into a usable string for the URL
-  let ingredients = encodeURIComponent(food);
   // The call to our Food API is set up and triggered
+
+  console.log(food);
+
   const config = {
     method: "GET",
     url:
@@ -33,7 +34,7 @@ export const fetchFood = (...food) => async (dispatch) => {
       number: "10",
       ranking: "1",
       ignorePantry: "false",
-      ingredients: `${ingredients}`,
+      ingredients: food[0],
     },
   };
 
